@@ -1,0 +1,807 @@
+{
+  "_readme": [
+    "HOW TO EDIT THIS FILE (JSON does not allow comments, so the notes live here).",
+    "To add a question: copy one object inside a chapter's 'questions' list, then change its text.",
+    "'options' must contain exactly 4 texts. 'answer' is the letter of the correct option: A, B, C or D.",
+    "'difficulty' must be one of: easy, medium, hard. Keep a mix so short quizzes stay balanced.",
+    "'id' must be unique. 'topic' is optional but used for the 'topics to revise' list on the results page.",
+    "To activate another chapter: replace its 'Title not added yet' with the official title, add 'description', 'topics', and questions, then set 'available' to true.",
+    "A chapter is shown as available only when 'available' is true AND it has at least one valid question.",
+    "Remember: do not leave a trailing comma after the last item of a list, and keep the file saved as UTF-8."
+  ],
+  "subject": "Chemistry",
+  "class": "10th",
+  "board": "Sindh Textbook Board",
+  "chapters": [
+    {
+      "id": 1,
+      "title": "Chemical Equilibrium",
+      "available": true,
+      "description": "Reversible reactions, dynamic equilibrium, the law of mass action, equilibrium constants and the reaction quotient.",
+      "topics": [
+        "Basic equilibrium concepts (reversible reactions and dynamic equilibrium)",
+        "Active mass",
+        "Law of Mass Action",
+        "Equilibrium constants",
+        "Kc expressions, units and calculations",
+        "Reaction quotient Qc",
+        "Predicting the direction of a reaction",
+        "Conceptual and numerical problems"
+      ],
+      "questions": [
+        {
+          "id": "c1-q01",
+          "difficulty": "easy",
+          "topic": "Reversible reactions",
+          "question": "What is a reversible reaction?",
+          "options": [
+            "A reaction that proceeds in the forward direction only",
+            "A reaction that can proceed in both the forward and the backward direction",
+            "A reaction that takes place only in the presence of a catalyst",
+            "A reaction that stops after a short time"
+          ],
+          "answer": "B",
+          "explanation": "In a reversible reaction the products can react with each other to form the reactants again, so the reaction goes both ways."
+        },
+        {
+          "id": "c1-q02",
+          "difficulty": "easy",
+          "topic": "Reversible reactions",
+          "question": "Which symbol is used to represent a reversible reaction?",
+          "options": [
+            "→",
+            "=",
+            "↑",
+            "⇌"
+          ],
+          "answer": "D",
+          "explanation": "The double arrow ⇌ shows that the forward and the reverse reactions occur at the same time."
+        },
+        {
+          "id": "c1-q03",
+          "difficulty": "easy",
+          "topic": "Reversible reactions",
+          "question": "Which of the following is a reversible reaction?",
+          "options": [
+            "AgNO₃ + NaCl → AgCl + NaNO₃",
+            "H₂ + I₂ ⇌ 2HI",
+            "2Mg + O₂ → 2MgO",
+            "NaOH + HCl → NaCl + H₂O"
+          ],
+          "answer": "B",
+          "explanation": "Hydrogen and iodine form hydrogen iodide, and HI also decomposes back into H₂ and I₂, so the reaction is reversible."
+        },
+        {
+          "id": "c1-q04",
+          "difficulty": "easy",
+          "topic": "Dynamic equilibrium",
+          "question": "At chemical equilibrium, the rate of the forward reaction is ______ the rate of the reverse reaction.",
+          "options": [
+            "equal to",
+            "greater than",
+            "less than",
+            "double"
+          ],
+          "answer": "A",
+          "explanation": "Equilibrium is reached when the forward and reverse rates become equal."
+        },
+        {
+          "id": "c1-q05",
+          "difficulty": "easy",
+          "topic": "Reversible reactions",
+          "question": "Which of the following is an example of an irreversible reaction?",
+          "options": [
+            "N₂ + 3H₂ ⇌ 2NH₃",
+            "H₂ + I₂ ⇌ 2HI",
+            "2Mg + O₂ → 2MgO",
+            "PCl₅ ⇌ PCl₃ + Cl₂"
+          ],
+          "answer": "C",
+          "explanation": "Burning of magnesium goes to completion; the magnesium oxide does not change back into magnesium and oxygen under ordinary conditions."
+        },
+        {
+          "id": "c1-q06",
+          "difficulty": "easy",
+          "topic": "Dynamic equilibrium",
+          "question": "Why is chemical equilibrium called a dynamic equilibrium?",
+          "options": [
+            "Because the reaction stops completely",
+            "Because both the forward and reverse reactions keep taking place at equal rates",
+            "Because the temperature keeps changing",
+            "Because only the forward reaction continues"
+          ],
+          "answer": "B",
+          "explanation": "Nothing seems to change at equilibrium, but molecules keep reacting in both directions at the same rate."
+        },
+        {
+          "id": "c1-q07",
+          "difficulty": "easy",
+          "topic": "Dynamic equilibrium",
+          "question": "At equilibrium, the concentrations of reactants and products:",
+          "options": [
+            "Remain constant with time",
+            "Keep increasing",
+            "Keep decreasing",
+            "Become equal to each other"
+          ],
+          "answer": "A",
+          "explanation": "Because the forward and reverse rates are equal, the amounts of reactants and products stay constant. They need not be equal to each other."
+        },
+        {
+          "id": "c1-q08",
+          "difficulty": "easy",
+          "topic": "Active mass",
+          "question": "What is meant by active mass?",
+          "options": [
+            "The total mass of a substance in grams",
+            "The atomic mass of an element",
+            "The molar concentration of a substance, in mol dm⁻³",
+            "The volume of the reaction vessel"
+          ],
+          "answer": "C",
+          "explanation": "Active mass is the concentration of a substance expressed in moles per dm³."
+        },
+        {
+          "id": "c1-q09",
+          "difficulty": "easy",
+          "topic": "Active mass",
+          "question": "How is the molar concentration of a substance A written?",
+          "options": [
+            "{A}",
+            "A%",
+            "[A]",
+            "A°"
+          ],
+          "answer": "C",
+          "explanation": "Square brackets around the formula, such as [A], stand for the molar concentration."
+        },
+        {
+          "id": "c1-q10",
+          "difficulty": "easy",
+          "topic": "Law of Mass Action",
+          "question": "Who proposed the law of mass action?",
+          "options": [
+            "Guldberg and Waage",
+            "Dalton and Avogadro",
+            "Mendeleev and Moseley",
+            "Boyle and Charles"
+          ],
+          "answer": "A",
+          "explanation": "The law of mass action was put forward by the Norwegian chemists Cato Guldberg and Peter Waage in 1864."
+        },
+        {
+          "id": "c1-q11",
+          "difficulty": "easy",
+          "topic": "Law of Mass Action",
+          "question": "According to the law of mass action, the rate of a chemical reaction is directly proportional to:",
+          "options": [
+            "The mass of the products only",
+            "The temperature of the surroundings only",
+            "The volume of the container only",
+            "The product of the active masses of the reactants"
+          ],
+          "answer": "D",
+          "explanation": "Rate ∝ product of the active masses (concentrations) of the reacting substances, each raised to the power of its coefficient."
+        },
+        {
+          "id": "c1-q12",
+          "difficulty": "easy",
+          "topic": "Equilibrium constant (Kc)",
+          "question": "What does the subscript 'c' in Kc stand for?",
+          "options": [
+            "Catalyst",
+            "Constant",
+            "Collision",
+            "Concentration"
+          ],
+          "answer": "D",
+          "explanation": "Kc is the equilibrium constant expressed in terms of molar concentrations."
+        },
+        {
+          "id": "c1-q13",
+          "difficulty": "easy",
+          "topic": "Kc expressions",
+          "question": "What is the correct expression of Kc for N₂ + 3H₂ ⇌ 2NH₃?",
+          "options": [
+            "([N₂][H₂]³) / [NH₃]²",
+            "[NH₃]² / ([N₂][H₂]³)",
+            "[NH₃] / ([N₂][H₂])",
+            "[NH₃]² × [N₂] × [H₂]³"
+          ],
+          "answer": "B",
+          "explanation": "Products go in the numerator and reactants in the denominator. Each concentration is raised to the power of its coefficient: 2 for NH₃, 1 for N₂ and 3 for H₂."
+        },
+        {
+          "id": "c1-q14",
+          "difficulty": "easy",
+          "topic": "Equilibrium constant (Kc)",
+          "question": "A very large value of Kc (much greater than 1) shows that at equilibrium:",
+          "options": [
+            "Reactants are present in much larger amounts than products",
+            "No product has formed",
+            "Products are present in much larger amounts than reactants",
+            "The reaction has not started"
+          ],
+          "answer": "C",
+          "explanation": "Kc = [products] / [reactants]. A large Kc means the numerator is large, so the equilibrium mixture is rich in products."
+        },
+        {
+          "id": "c1-q15",
+          "difficulty": "easy",
+          "topic": "Equilibrium constant (Kc)",
+          "question": "A very small value of Kc (much less than 1) shows that at equilibrium:",
+          "options": [
+            "Products are present in much larger amounts than reactants",
+            "Reactants are present in much larger amounts than products",
+            "The reaction goes to completion",
+            "Only products are present"
+          ],
+          "answer": "B",
+          "explanation": "A small Kc means the numerator (products) is small compared with the denominator (reactants)."
+        },
+        {
+          "id": "c1-q16",
+          "difficulty": "easy",
+          "topic": "Dynamic equilibrium",
+          "question": "A reversible reaction can reach a state of chemical equilibrium only in:",
+          "options": [
+            "An open system",
+            "A system with a catalyst only",
+            "A closed system",
+            "A system with no reactants"
+          ],
+          "answer": "C",
+          "explanation": "In an open system the substances can escape, so the forward and reverse reactions cannot balance. Equilibrium needs a closed system."
+        },
+        {
+          "id": "c1-q17",
+          "difficulty": "easy",
+          "topic": "Kc expressions",
+          "question": "In the Kc expression, the concentrations of the products are written in the:",
+          "options": [
+            "Numerator",
+            "Denominator",
+            "Both numerator and denominator",
+            "Power only"
+          ],
+          "answer": "A",
+          "explanation": "Kc = [products] / [reactants], so products form the numerator."
+        },
+        {
+          "id": "c1-q18",
+          "difficulty": "easy",
+          "topic": "Reaction quotient (Qc)",
+          "question": "The reaction quotient is represented by the symbol:",
+          "options": [
+            "Kc",
+            "Rc",
+            "Qc",
+            "Pc"
+          ],
+          "answer": "C",
+          "explanation": "Qc is the reaction quotient. It has the same form as Kc but is calculated at any stage of the reaction."
+        },
+        {
+          "id": "c1-q19",
+          "difficulty": "medium",
+          "topic": "Kc expressions",
+          "question": "What is the Kc expression for 2SO₂ + O₂ ⇌ 2SO₃?",
+          "options": [
+            "[SO₃] / ([SO₂][O₂])",
+            "([SO₂]²[O₂]) / [SO₃]²",
+            "[SO₃]² / ([SO₂][O₂]²)",
+            "[SO₃]² / ([SO₂]²[O₂])"
+          ],
+          "answer": "D",
+          "explanation": "Product SO₃ has coefficient 2; SO₂ has coefficient 2 and O₂ has coefficient 1. So Kc = [SO₃]² / ([SO₂]²[O₂])."
+        },
+        {
+          "id": "c1-q20",
+          "difficulty": "medium",
+          "topic": "Kc expressions",
+          "question": "What is the Kc expression for N₂O₄ ⇌ 2NO₂?",
+          "options": [
+            "[NO₂]² / [N₂O₄]",
+            "[N₂O₄] / [NO₂]²",
+            "[NO₂] / [N₂O₄]",
+            "[N₂O₄]² / [NO₂]"
+          ],
+          "answer": "A",
+          "explanation": "NO₂ is the product with coefficient 2, so it is squared in the numerator. N₂O₄ is the reactant with coefficient 1."
+        },
+        {
+          "id": "c1-q21",
+          "difficulty": "medium",
+          "topic": "Kc units",
+          "question": "What is the unit of Kc for N₂ + 3H₂ ⇌ 2NH₃?",
+          "options": [
+            "dm⁶ mol⁻²",
+            "mol dm⁻³",
+            "dm³ mol⁻¹",
+            "Kc has no unit"
+          ],
+          "answer": "A",
+          "explanation": "Kc = (mol dm⁻³)² / [(mol dm⁻³)(mol dm⁻³)³] = (mol dm⁻³)⁻² = dm⁶ mol⁻²."
+        },
+        {
+          "id": "c1-q22",
+          "difficulty": "medium",
+          "topic": "Kc units",
+          "question": "What is the unit of Kc for PCl₅ ⇌ PCl₃ + Cl₂?",
+          "options": [
+            "mol dm⁻³",
+            "dm³ mol⁻¹",
+            "mol² dm⁻⁶",
+            "Kc has no unit"
+          ],
+          "answer": "A",
+          "explanation": "Kc = (mol dm⁻³)(mol dm⁻³) / (mol dm⁻³) = mol dm⁻³."
+        },
+        {
+          "id": "c1-q23",
+          "difficulty": "medium",
+          "topic": "Kc units",
+          "question": "Kc of which of the following reactions has no unit?",
+          "options": [
+            "N₂ + 3H₂ ⇌ 2NH₃",
+            "PCl₅ ⇌ PCl₃ + Cl₂",
+            "N₂ + O₂ ⇌ 2NO",
+            "2SO₂ + O₂ ⇌ 2SO₃"
+          ],
+          "answer": "C",
+          "explanation": "In N₂ + O₂ ⇌ 2NO the total number of moles is 2 on each side, so the units cancel completely."
+        },
+        {
+          "id": "c1-q24",
+          "difficulty": "medium",
+          "topic": "Kc calculations",
+          "question": "For H₂ + I₂ ⇌ 2HI, the equilibrium concentrations are [H₂] = 0.1, [I₂] = 0.2 and [HI] = 0.6 mol dm⁻³. What is Kc?",
+          "options": [
+            "1.8",
+            "18",
+            "36",
+            "9"
+          ],
+          "answer": "B",
+          "explanation": "Kc = [HI]² / ([H₂][I₂]) = (0.6)² / (0.1 × 0.2) = 0.36 / 0.02 = 18."
+        },
+        {
+          "id": "c1-q25",
+          "difficulty": "medium",
+          "topic": "Reaction quotient (Qc)",
+          "question": "The reaction quotient Qc is calculated using the concentrations present:",
+          "options": [
+            "Only when the reaction is at equilibrium",
+            "Of the reactants only",
+            "At any given moment during the reaction",
+            "Of the catalyst only"
+          ],
+          "answer": "C",
+          "explanation": "Qc has the same expression as Kc, but it can be worked out for any mixture, whether or not it is at equilibrium."
+        },
+        {
+          "id": "c1-q26",
+          "difficulty": "medium",
+          "topic": "Predicting direction",
+          "question": "If Qc is less than Kc, the reaction will proceed:",
+          "options": [
+            "In the reverse direction, towards reactants",
+            "In the forward direction, towards products",
+            "In neither direction, because it is at equilibrium",
+            "Only after a catalyst is added"
+          ],
+          "answer": "B",
+          "explanation": "Qc < Kc means there are too many reactants compared with equilibrium, so the net reaction shifts forward to form more products."
+        },
+        {
+          "id": "c1-q27",
+          "difficulty": "medium",
+          "topic": "Predicting direction",
+          "question": "If Qc is equal to Kc, the reaction mixture is:",
+          "options": [
+            "Moving in the forward direction",
+            "At equilibrium",
+            "Moving in the reverse direction",
+            "Not a reversible reaction"
+          ],
+          "answer": "B",
+          "explanation": "When Qc = Kc, the concentrations are the equilibrium concentrations and there is no net change."
+        },
+        {
+          "id": "c1-q28",
+          "difficulty": "medium",
+          "topic": "Kc calculations",
+          "question": "For a certain reaction Kc = 4 at a given temperature. What is the value of Kc for the reverse reaction at the same temperature?",
+          "options": [
+            "4",
+            "2",
+            "16",
+            "0.25"
+          ],
+          "answer": "D",
+          "explanation": "The Kc of the reverse reaction is the reciprocal of the forward Kc: 1 / 4 = 0.25."
+        },
+        {
+          "id": "c1-q29",
+          "difficulty": "medium",
+          "topic": "Equilibrium constant (Kc)",
+          "question": "The value of Kc for a given reaction depends on:",
+          "options": [
+            "The initial concentrations of the reactants",
+            "The amount of catalyst added",
+            "The time allowed for the reaction",
+            "Temperature"
+          ],
+          "answer": "D",
+          "explanation": "For a given reaction, Kc changes only when the temperature changes."
+        },
+        {
+          "id": "c1-q30",
+          "difficulty": "medium",
+          "topic": "Equilibrium constant (Kc)",
+          "question": "What is the effect of a catalyst on a reversible reaction?",
+          "options": [
+            "It increases the value of Kc",
+            "It helps equilibrium to be reached faster without changing the value of Kc",
+            "It decreases the value of Kc",
+            "It converts the reaction into an irreversible reaction"
+          ],
+          "answer": "B",
+          "explanation": "A catalyst speeds up the forward and reverse reactions equally, so equilibrium is reached sooner but Kc is not changed."
+        },
+        {
+          "id": "c1-q31",
+          "difficulty": "medium",
+          "topic": "Dynamic equilibrium",
+          "question": "Which statement is NOT true for a system at chemical equilibrium?",
+          "options": [
+            "The rates of the forward and reverse reactions are equal",
+            "Both the forward and reverse reactions have stopped",
+            "Observable properties such as colour remain constant",
+            "The concentrations of reactants and products stay constant"
+          ],
+          "answer": "B",
+          "explanation": "Equilibrium is dynamic: the reactions do not stop, they continue at equal rates."
+        },
+        {
+          "id": "c1-q32",
+          "difficulty": "medium",
+          "topic": "Law of Mass Action",
+          "question": "In terms of rate constants, the equilibrium constant Kc is equal to:",
+          "options": [
+            "kr / kf",
+            "kf / kr (forward rate constant divided by reverse rate constant)",
+            "kf × kr",
+            "kf − kr"
+          ],
+          "answer": "B",
+          "explanation": "At equilibrium kf[reactants] = kr[products], so [products] / [reactants] = kf / kr = Kc."
+        },
+        {
+          "id": "c1-q33",
+          "difficulty": "medium",
+          "topic": "Law of Mass Action",
+          "question": "For the reaction 2A + B ⇌ C + D, the rate of the forward reaction according to the law of mass action is proportional to:",
+          "options": [
+            "[A][B]",
+            "[A]²[B]",
+            "2[A] × [B]",
+            "[C][D]"
+          ],
+          "answer": "B",
+          "explanation": "Each active mass is raised to the power of its coefficient, so rate ∝ [A]² [B]. The product concentrations [C][D] belong to the reverse reaction."
+        },
+        {
+          "id": "c1-q34",
+          "difficulty": "medium",
+          "topic": "Kc expressions",
+          "question": "In the Kc expression, the power to which each concentration is raised is equal to:",
+          "options": [
+            "Its coefficient in the balanced chemical equation",
+            "Its molar mass",
+            "Its valency",
+            "Always one"
+          ],
+          "answer": "A",
+          "explanation": "The balanced equation's coefficients become the exponents of the concentrations in Kc."
+        },
+        {
+          "id": "c1-q35",
+          "difficulty": "medium",
+          "topic": "Equilibrium constant (Kc)",
+          "question": "A reaction has a Kc value close to 1. At equilibrium, the mixture contains:",
+          "options": [
+            "Almost only products",
+            "Almost only reactants",
+            "Only the catalyst",
+            "Appreciable amounts of both reactants and products"
+          ],
+          "answer": "D",
+          "explanation": "Kc ≈ 1 means that the concentrations of products and reactants are of comparable size."
+        },
+        {
+          "id": "c1-q36",
+          "difficulty": "hard",
+          "topic": "Kc calculations",
+          "question": "For N₂ + 3H₂ ⇌ 2NH₃ at equilibrium, [N₂] = 0.2, [H₂] = 0.1 and [NH₃] = 0.4 mol dm⁻³. Calculate Kc.",
+          "options": [
+            "800 dm⁶ mol⁻²",
+            "8 dm⁶ mol⁻²",
+            "80 dm⁶ mol⁻²",
+            "1.25 × 10⁻³ dm⁶ mol⁻²"
+          ],
+          "answer": "A",
+          "explanation": "Kc = [NH₃]² / ([N₂][H₂]³) = (0.4)² / (0.2 × 0.1³) = 0.16 / 0.0002 = 800 dm⁶ mol⁻²."
+        },
+        {
+          "id": "c1-q37",
+          "difficulty": "hard",
+          "topic": "Kc calculations",
+          "question": "For PCl₅ ⇌ PCl₃ + Cl₂ at equilibrium, [PCl₃] = 0.3, [Cl₂] = 0.3 and [PCl₅] = 0.15 mol dm⁻³. Calculate Kc.",
+          "options": [
+            "1.67 mol dm⁻³",
+            "0.06 mol dm⁻³",
+            "6.0 mol dm⁻³",
+            "0.6 mol dm⁻³"
+          ],
+          "answer": "D",
+          "explanation": "Kc = [PCl₃][Cl₂] / [PCl₅] = (0.3 × 0.3) / 0.15 = 0.09 / 0.15 = 0.6 mol dm⁻³."
+        },
+        {
+          "id": "c1-q38",
+          "difficulty": "hard",
+          "topic": "Kc calculations",
+          "question": "For H₂ + I₂ ⇌ 2HI, Kc = 49 at a certain temperature. If [H₂] = [I₂] = 0.1 mol dm⁻³ at equilibrium, what is [HI]?",
+          "options": [
+            "0.7 mol dm⁻³",
+            "4.9 mol dm⁻³",
+            "0.49 mol dm⁻³",
+            "7.0 mol dm⁻³"
+          ],
+          "answer": "A",
+          "explanation": "[HI]² = Kc × [H₂][I₂] = 49 × 0.01 = 0.49, so [HI] = √0.49 = 0.7 mol dm⁻³."
+        },
+        {
+          "id": "c1-q39",
+          "difficulty": "hard",
+          "topic": "Predicting direction",
+          "question": "For N₂O₄ ⇌ 2NO₂, Kc = 4.0 mol dm⁻³ at a certain temperature. A mixture has [N₂O₄] = 0.5 and [NO₂] = 1.0 mol dm⁻³. What happens?",
+          "options": [
+            "Qc = 2.0, so the reaction proceeds in the forward direction",
+            "Qc = 2.0, so the reaction proceeds in the reverse direction",
+            "Qc = 0.5, so the reaction proceeds in the forward direction",
+            "Qc = 4.0, so the mixture is at equilibrium"
+          ],
+          "answer": "A",
+          "explanation": "Qc = [NO₂]² / [N₂O₄] = (1.0)² / 0.5 = 2.0. Since Qc (2.0) < Kc (4.0), the net reaction goes forward to make more NO₂."
+        },
+        {
+          "id": "c1-q40",
+          "difficulty": "hard",
+          "topic": "Predicting direction",
+          "question": "For A + B ⇌ C + D, Kc = 10. A mixture has [A] = 0.1, [B] = 0.2, [C] = 0.5 and [D] = 0.4 mol dm⁻³. What can be concluded?",
+          "options": [
+            "The reaction will go forward because Qc < Kc",
+            "The reaction will go in reverse because Qc > Kc",
+            "The mixture is at equilibrium because Qc = Kc = 10",
+            "Nothing can be predicted without a catalyst"
+          ],
+          "answer": "C",
+          "explanation": "Qc = ([C][D]) / ([A][B]) = (0.5 × 0.4) / (0.1 × 0.2) = 0.20 / 0.02 = 10, which equals Kc."
+        },
+        {
+          "id": "c1-q41",
+          "difficulty": "hard",
+          "topic": "Predicting direction",
+          "question": "For H₂ + I₂ ⇌ 2HI, Kc = 50. A mixture contains [H₂] = 0.1, [I₂] = 0.1 and [HI] = 1.0 mol dm⁻³. Which statement is correct?",
+          "options": [
+            "Qc = 100, so more HI forms (forward direction)",
+            "Qc = 10, so more HI forms (forward direction)",
+            "Qc = 50, so the mixture is at equilibrium",
+            "Qc = 100, so HI decomposes (reverse direction)"
+          ],
+          "answer": "D",
+          "explanation": "Qc = [HI]² / ([H₂][I₂]) = (1.0)² / (0.1 × 0.1) = 100. Since Qc > Kc, there is too much product and the reaction proceeds in reverse."
+        },
+        {
+          "id": "c1-q42",
+          "difficulty": "hard",
+          "topic": "Kc calculations",
+          "question": "For N₂ + 3H₂ ⇌ 2NH₃, Kc = 800 at a certain temperature. What is Kc for 2NH₃ ⇌ N₂ + 3H₂ at the same temperature?",
+          "options": [
+            "800",
+            "1600",
+            "0.8",
+            "1.25 × 10⁻³"
+          ],
+          "answer": "D",
+          "explanation": "Reversing the reaction inverts the equilibrium constant: 1 / 800 = 1.25 × 10⁻³."
+        },
+        {
+          "id": "c1-q43",
+          "difficulty": "hard",
+          "topic": "Kc calculations",
+          "question": "At equilibrium, a 2 dm³ vessel contains 0.5 mol PCl₅, 0.6 mol PCl₃ and 0.6 mol Cl₂. What is Kc for PCl₅ ⇌ PCl₃ + Cl₂?",
+          "options": [
+            "0.72 mol dm⁻³",
+            "1.44 mol dm⁻³",
+            "0.36 mol dm⁻³",
+            "2.78 mol dm⁻³"
+          ],
+          "answer": "C",
+          "explanation": "Convert moles to concentration first: PCl₅ = 0.25, PCl₃ = 0.30, Cl₂ = 0.30 mol dm⁻³. Kc = (0.30 × 0.30) / 0.25 = 0.36 mol dm⁻³."
+        },
+        {
+          "id": "c1-q44",
+          "difficulty": "hard",
+          "topic": "Kc calculations",
+          "question": "1.0 mol of H₂ and 1.0 mol of I₂ are placed in a 1 dm³ vessel. At equilibrium, 1.6 mol of HI is present. What is Kc for H₂ + I₂ ⇌ 2HI?",
+          "options": [
+            "4",
+            "16",
+            "64",
+            "8"
+          ],
+          "answer": "C",
+          "explanation": "1.6 mol HI needs 0.8 mol each of H₂ and I₂, leaving 0.2 mol dm⁻³ of each. Kc = (1.6)² / (0.2 × 0.2) = 2.56 / 0.04 = 64."
+        },
+        {
+          "id": "c1-q45",
+          "difficulty": "hard",
+          "topic": "Kc units",
+          "question": "What is the unit of Kc for 2SO₂ + O₂ ⇌ 2SO₃?",
+          "options": [
+            "mol dm⁻³",
+            "dm⁶ mol⁻²",
+            "dm³ mol⁻¹",
+            "Kc has no unit"
+          ],
+          "answer": "C",
+          "explanation": "Kc = (mol dm⁻³)² / [(mol dm⁻³)² (mol dm⁻³)] = (mol dm⁻³)⁻¹ = dm³ mol⁻¹."
+        },
+        {
+          "id": "c1-q46",
+          "difficulty": "hard",
+          "topic": "Kc units",
+          "question": "What is the unit of Kc for 2NH₃ ⇌ N₂ + 3H₂?",
+          "options": [
+            "mol dm⁻³",
+            "mol² dm⁻⁶",
+            "dm⁶ mol⁻²",
+            "Kc has no unit"
+          ],
+          "answer": "B",
+          "explanation": "Kc = [N₂][H₂]³ / [NH₃]² has units (mol dm⁻³)⁴ / (mol dm⁻³)² = (mol dm⁻³)² = mol² dm⁻⁶."
+        },
+        {
+          "id": "c1-q47",
+          "difficulty": "hard",
+          "topic": "Reaction quotient (Qc)",
+          "question": "Which statement correctly distinguishes Qc from Kc?",
+          "options": [
+            "Qc uses only product concentrations, while Kc uses only reactant concentrations",
+            "Qc is always equal to Kc",
+            "Kc changes during the reaction, while Qc stays fixed",
+            "Qc has the same form as Kc but uses concentrations at any instant, whereas Kc uses equilibrium concentrations"
+          ],
+          "answer": "D",
+          "explanation": "Qc can be calculated at any time. Only when the mixture reaches equilibrium does Qc become equal to Kc."
+        },
+        {
+          "id": "c1-q48",
+          "difficulty": "hard",
+          "topic": "Dynamic equilibrium",
+          "question": "Separate closed vessels at the same temperature contain (i) H₂ and I₂, and (ii) the equivalent amount of HI alone. Both eventually reach the same equilibrium mixture. This shows that:",
+          "options": [
+            "Equilibrium can be approached from either direction",
+            "Only the forward reaction takes place",
+            "Equilibrium can be reached only from the reactant side",
+            "The reaction is irreversible"
+          ],
+          "answer": "A",
+          "explanation": "A true reversible reaction reaches the same equilibrium state whether you start from the reactants or from the products."
+        },
+        {
+          "id": "c1-q49",
+          "difficulty": "hard",
+          "topic": "Kc calculations",
+          "question": "For 2HI ⇌ H₂ + I₂, Kc = 0.04 at a certain temperature. If [HI] = 0.5 mol dm⁻³ at equilibrium and [H₂] = [I₂], what is [H₂]?",
+          "options": [
+            "0.1 mol dm⁻³",
+            "0.01 mol dm⁻³",
+            "0.02 mol dm⁻³",
+            "0.2 mol dm⁻³"
+          ],
+          "answer": "A",
+          "explanation": "[H₂][I₂] = Kc × [HI]² = 0.04 × 0.25 = 0.01. Since [H₂] = [I₂], [H₂]² = 0.01, so [H₂] = 0.1 mol dm⁻³."
+        },
+        {
+          "id": "c1-q50",
+          "difficulty": "hard",
+          "topic": "Kc expressions",
+          "question": "All species are gases in 4NH₃ + 5O₂ ⇌ 4NO + 6H₂O. What is the correct expression for Kc?",
+          "options": [
+            "[NO][H₂O] / ([NH₃][O₂])",
+            "([NH₃]⁴[O₂]⁵) / ([NO]⁴[H₂O]⁶)",
+            "[NO]⁴[H₂O]⁶ / ([NH₃]⁴[O₂]⁶)",
+            "[NO]⁴[H₂O]⁶ / ([NH₃]⁴[O₂]⁵)"
+          ],
+          "answer": "D",
+          "explanation": "Products NO (coefficient 4) and H₂O (coefficient 6) form the numerator; reactants NH₃ (4) and O₂ (5) form the denominator, each raised to its coefficient."
+        }
+      ]
+    },
+    {
+      "id": 2,
+      "title": "Title not added yet",
+      "available": false,
+      "description": "",
+      "topics": [],
+      "questions": []
+    },
+    {
+      "id": 3,
+      "title": "Title not added yet",
+      "available": false,
+      "description": "",
+      "topics": [],
+      "questions": []
+    },
+    {
+      "id": 4,
+      "title": "Title not added yet",
+      "available": false,
+      "description": "",
+      "topics": [],
+      "questions": []
+    },
+    {
+      "id": 5,
+      "title": "Title not added yet",
+      "available": false,
+      "description": "",
+      "topics": [],
+      "questions": []
+    },
+    {
+      "id": 6,
+      "title": "Title not added yet",
+      "available": false,
+      "description": "",
+      "topics": [],
+      "questions": []
+    },
+    {
+      "id": 7,
+      "title": "Title not added yet",
+      "available": false,
+      "description": "",
+      "topics": [],
+      "questions": []
+    },
+    {
+      "id": 8,
+      "title": "Title not added yet",
+      "available": false,
+      "description": "",
+      "topics": [],
+      "questions": []
+    },
+    {
+      "id": 9,
+      "title": "Title not added yet",
+      "available": false,
+      "description": "",
+      "topics": [],
+      "questions": []
+    },
+    {
+      "id": 10,
+      "title": "Title not added yet",
+      "available": false,
+      "description": "",
+      "topics": [],
+      "questions": []
+    }
+  ]
+}
