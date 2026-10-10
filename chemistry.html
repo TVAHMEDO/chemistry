@@ -1,0 +1,1183 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Chemistry MCQs | Class 10 | MCQ Master</title>
+  <meta name="description" content="Class 10 Chemistry MCQ practice, Sindh Textbook Board. Chapter-wise quizzes with instant feedback and detailed results.">
+  <meta name="theme-color" content="#060a18">
+  <style>
+    /* =====================================================
+       DESIGN TOKENS  (change colours here to re-theme)
+       ===================================================== */
+    :root{
+      --bg:#060a18;
+      --text:#eaf0ff;
+      --muted:#aab7dc;
+      --line:rgba(255,255,255,.15);
+      --cyan:#55d6ff;
+      --blue:#6a8dff;
+      --violet:#a58bff;
+      --good:#4be3a3;  --good-text:#8cf3c6;  --good-bg:rgba(75,227,163,.14);
+      --bad:#ff7a8e;   --bad-text:#ffa3b1;   --bad-bg:rgba(255,122,142,.14);
+      --warn-text:#ffd98a; --warn-bg:rgba(255,217,138,.12);
+      --radius:22px;
+      --font:"Segoe UI",system-ui,-apple-system,"Helvetica Neue",Roboto,Arial,sans-serif;
+    }
+
+    *,*::before,*::after{box-sizing:border-box}
+    html{scroll-behavior:smooth;-webkit-text-size-adjust:100%}
+    body{
+      margin:0;min-height:100vh;font-family:var(--font);font-size:1rem;line-height:1.6;
+      color:var(--text);background:var(--bg);overflow-x:hidden;
+    }
+    /* Ambient lighting: fixed gradients only (cheap to draw, no blurred layers) */
+    body::before{
+      content:"";position:fixed;inset:0;z-index:-1;pointer-events:none;
+      background:
+        radial-gradient(60vmax 60vmax at 10% -10%,rgba(85,214,255,.20),transparent 60%),
+        radial-gradient(55vmax 55vmax at 98% 8%,rgba(165,139,255,.22),transparent 60%),
+        radial-gradient(70vmax 70vmax at 50% 118%,rgba(106,141,255,.20),transparent 60%),
+        linear-gradient(180deg,#080d22,#050813);
+    }
+    [hidden]{display:none !important}
+    img,svg{max-width:100%}
+    h1,h2,h3,p{margin-top:0}
+    a{color:var(--cyan)}
+    ::selection{background:rgba(85,214,255,.35)}
+
+    :focus-visible{outline:3px solid #a8ecff;outline-offset:3px;border-radius:8px}
+
+    .wrap{width:min(1200px,100% - 2.5rem);margin-inline:auto}
+    .skip{position:absolute;left:-999px;top:.5rem;z-index:300;padding:.6rem 1rem;border-radius:10px;background:#fff;color:#04112a;font-weight:700}
+    .skip:focus{left:.5rem}
+    .sr-only{position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0 0 0 0);white-space:nowrap}
+
+    /* =====================================================
+       GLASS / CRYSTAL SURFACE
+       ===================================================== */
+    .glass{
+      position:relative;
+      background:
+        linear-gradient(120deg,rgba(255,255,255,.10),transparent 30%,transparent 70%,rgba(110,200,255,.07)),
+        linear-gradient(145deg,rgba(255,255,255,.10),rgba(255,255,255,.03));
+      border:1px solid var(--line);
+      border-radius:var(--radius);
+      box-shadow:0 18px 50px rgba(0,0,0,.38),inset 0 1px 0 rgba(255,255,255,.22),inset 0 -1px 0 rgba(255,255,255,.04);
+      -webkit-backdrop-filter:blur(18px) saturate(150%);
+      backdrop-filter:blur(18px) saturate(150%);
+    }
+    /* Fallback for browsers without backdrop-filter: a solid, still readable panel */
+    @supports not ((backdrop-filter:blur(1px)) or (-webkit-backdrop-filter:blur(1px))){
+      .glass{background:linear-gradient(145deg,#1a2550,#0e1636)}
+      .nav,.transition{background:#0a1030 !important}
+    }
+
+    /* =====================================================
+       BUTTONS
+       ===================================================== */
+    .btn{
+      display:inline-flex;align-items:center;justify-content:center;gap:.5rem;
+      min-height:46px;padding:.65rem 1.3rem;border-radius:999px;
+      border:1px solid var(--line);background:rgba(255,255,255,.08);color:var(--text);
+      font:600 1rem/1.2 var(--font);text-decoration:none;cursor:pointer;
+      transition:transform .2s ease,box-shadow .2s ease,background .2s ease,border-color .2s ease;
+    }
+    .btn:hover{transform:translateY(-2px);background:rgba(255,255,255,.13);border-color:rgba(255,255,255,.34);box-shadow:0 8px 24px rgba(85,214,255,.20)}
+    .btn:active{transform:translateY(0) scale(.98)}
+    .btn-primary{
+      color:#04112a;border-color:transparent;
+      background:linear-gradient(135deg,#43ccf6,#6a8dff 55%,#9a82ff);
+      box-shadow:0 8px 26px rgba(90,140,255,.35);
+    }
+    .btn-primary:hover{background:linear-gradient(135deg,#5ad6fb,#7c9bff 55%,#a993ff);box-shadow:0 10px 32px rgba(106,141,255,.5)}
+    .btn-lg{min-height:52px;padding:.8rem 1.8rem;font-size:1.05rem}
+    .btn:disabled,.btn[aria-disabled="true"]{opacity:.5;cursor:not-allowed;transform:none;box-shadow:none}
+
+    .chip{
+      display:inline-flex;align-items:center;padding:.2rem .75rem;border-radius:999px;
+      border:1px solid var(--line);background:rgba(255,255,255,.07);
+      font-size:.85rem;font-weight:600;color:var(--text);
+    }
+
+    /* =====================================================
+       NAVIGATION
+       ===================================================== */
+    .nav{
+      position:sticky;top:0;z-index:100;
+      background:rgba(8,12,30,.58);border-bottom:1px solid var(--line);
+      -webkit-backdrop-filter:blur(16px) saturate(140%);backdrop-filter:blur(16px) saturate(140%);
+    }
+    .nav-inner{display:flex;align-items:center;justify-content:space-between;gap:1rem;padding:.65rem 0}
+    .brand{display:inline-flex;align-items:center;gap:.65rem;color:var(--text);text-decoration:none;font-weight:800;font-size:1.2rem;letter-spacing:-.01em}
+    .brand svg{width:34px;height:34px;flex:none}
+    .nav-links{display:flex;align-items:center;gap:.4rem;list-style:none;margin:0;padding:0}
+    .nav-links a:not(.btn){display:inline-block;padding:.5rem .9rem;border-radius:999px;color:var(--muted);text-decoration:none;font-weight:600;transition:color .2s,background .2s}
+    .nav-links a:not(.btn):hover{color:var(--text);background:rgba(255,255,255,.08)}
+    .nav-links .btn{min-height:42px;padding:.5rem 1.15rem;margin-left:.4rem}
+    .menu-btn{display:none;width:46px;height:46px;border-radius:14px;border:1px solid var(--line);background:rgba(255,255,255,.08);color:var(--text);cursor:pointer;align-items:center;justify-content:center}
+    @media (max-width:820px){
+      .menu-btn{display:inline-flex}
+      .nav-links{
+        position:absolute;left:0;right:0;top:100%;flex-direction:column;align-items:stretch;gap:.25rem;
+        padding:.75rem 1.25rem 1.1rem;background:rgba(8,12,30,.94);border-bottom:1px solid var(--line);
+        display:none;
+      }
+      .nav-links.open{display:flex}
+      .nav-links a:not(.btn){padding:.8rem 1rem}
+      .nav-links .btn{margin:.4rem 0 0}
+    }
+
+    /* =====================================================
+       TYPOGRAPHY / SECTIONS
+       ===================================================== */
+    h1{font-size:clamp(2.2rem,6.2vw,4rem);line-height:1.08;letter-spacing:-.03em;font-weight:800}
+    h2{font-size:clamp(1.55rem,3.6vw,2.3rem);line-height:1.2;letter-spacing:-.02em;font-weight:800}
+    h3{font-size:1.2rem;line-height:1.3;font-weight:700}
+    .lead{color:var(--muted);font-size:clamp(1.05rem,2.3vw,1.2rem)}
+    .section{padding:clamp(2.5rem,6vw,4.5rem) 0;scroll-margin-top:72px}
+    .section-head{max-width:46rem;margin-bottom:2rem}
+    .section-head p{color:var(--muted);margin-bottom:0}
+
+    /* =====================================================
+       CHAPTER CARDS (used on both pages)
+       ===================================================== */
+    .chapter-grid{display:grid;gap:1.1rem;grid-template-columns:repeat(auto-fill,minmax(min(100%,250px),1fr))}
+    .chapter{
+      display:flex;flex-direction:column;gap:.55rem;min-height:190px;padding:1.3rem 1.3rem 1.2rem;
+      color:var(--text);text-decoration:none;min-width:0;
+      transition:transform .25s ease,border-color .25s ease,box-shadow .25s ease;
+    }
+    .chapter .ch-no{display:inline-flex;align-items:center;justify-content:center;align-self:flex-start;min-width:44px;height:44px;padding:0 .8rem;border-radius:14px;font-weight:800;border:1px solid var(--line);background:rgba(255,255,255,.07)}
+    .chapter h3{margin:.3rem 0 0;overflow-wrap:anywhere}
+    .chapter .ch-note{margin:0;color:var(--muted);font-size:.92rem}
+    .chapter .ch-foot{display:flex;align-items:center;justify-content:space-between;gap:.75rem;margin-top:auto;padding-top:.6rem}
+    .status{display:inline-flex;align-items:center;gap:.4rem;padding:.2rem .7rem;border-radius:999px;font-size:.85rem;font-weight:700;border:1px solid var(--line)}
+    .status.live{color:var(--good-text);background:var(--good-bg);border-color:rgba(75,227,163,.4)}
+    .status.soon{color:var(--warn-text);background:var(--warn-bg);border-color:rgba(255,217,138,.35)}
+    .go{display:inline-flex;align-items:center;justify-content:center;width:42px;height:42px;border-radius:50%;border:1px solid var(--line);background:rgba(255,255,255,.08);transition:transform .25s,background .25s}
+    .go svg{width:18px;height:18px}
+    a.chapter:hover{transform:translateY(-5px);border-color:rgba(85,214,255,.6);box-shadow:0 22px 50px rgba(0,0,0,.45),0 0 0 1px rgba(85,214,255,.25),0 0 34px rgba(85,214,255,.18)}
+    a.chapter:hover .go{transform:translateX(3px);background:linear-gradient(135deg,#43ccf6,#7c9bff);color:#04112a;border-color:transparent}
+    .chapter.is-locked{opacity:.82;cursor:not-allowed}
+    .chapter.is-locked .ch-no{color:var(--muted)}
+
+    /* =====================================================
+       PAGE-TRANSITION OVERLAY (thin line + circular progress)
+       ===================================================== */
+    .transition{
+      position:fixed;inset:0;z-index:500;display:grid;place-items:center;
+      background:rgba(5,8,19,.74);-webkit-backdrop-filter:blur(8px);backdrop-filter:blur(8px);
+      opacity:0;visibility:hidden;transition:opacity .2s ease,visibility .2s;
+    }
+    .transition.active{opacity:1;visibility:visible}
+    .tr-box{width:min(320px,86vw);padding:1.6rem 1.5rem;text-align:center}
+    .tr-ring{width:78px;height:78px;margin:0 auto .9rem;display:block;transform:rotate(-90deg)}
+    .tr-ring circle{fill:none;stroke-width:5;stroke-linecap:round}
+    .tr-ring .track{stroke:rgba(255,255,255,.14)}
+    .tr-ring .fill{stroke:url(#trGrad);stroke-dasharray:163.4;stroke-dashoffset:163.4;transition:stroke-dashoffset .8s ease-out}
+    .tr-text{margin:0;font-weight:700}
+    .tr-line{height:3px;margin-top:1rem;border-radius:3px;background:rgba(255,255,255,.14);overflow:hidden}
+    .tr-line span{display:block;height:100%;width:0;background:linear-gradient(90deg,var(--cyan),var(--violet));transition:width .8s ease-out}
+    .transition.run .tr-ring .fill{stroke-dashoffset:0}
+    .transition.run .tr-line span{width:100%}
+
+    /* =====================================================
+       FOOTER
+       ===================================================== */
+    .footer{margin-top:3rem;padding:2.5rem 0 2rem;border-top:1px solid var(--line);background:rgba(8,12,30,.45)}
+    .footer-grid{display:grid;gap:2rem;grid-template-columns:1.4fr 1fr}
+    @media (max-width:700px){.footer-grid{grid-template-columns:1fr}}
+    .footer p{color:var(--muted);margin-bottom:.5rem}
+    .footer h2{font-size:1rem;letter-spacing:0;margin-bottom:.6rem}
+    .footer ul{list-style:none;margin:0;padding:0;display:grid;gap:.35rem}
+    .footer li a{color:var(--muted);text-decoration:none}
+    .footer li a:hover{color:var(--text);text-decoration:underline}
+    .footer-bottom{margin-top:1.8rem;padding-top:1.2rem;border-top:1px solid var(--line);display:flex;flex-wrap:wrap;gap:.5rem 1.5rem;justify-content:space-between;color:var(--muted);font-size:.92rem}
+    .footer-bottom p{margin:0}
+
+    /* =====================================================
+       MOTION PREFERENCES
+       ===================================================== */
+    @media (prefers-reduced-motion:reduce){
+      html{scroll-behavior:auto}
+      *,*::before,*::after{animation-duration:.01ms !important;animation-iteration-count:1 !important;transition-duration:.01ms !important}
+    }
+
+    /* =====================================================
+       CHEMISTRY-PAGE STYLES
+       ===================================================== */
+    .page{padding:1.5rem 0 1rem}
+    .crumbs ol{list-style:none;display:flex;flex-wrap:wrap;gap:.2rem .55rem;margin:0 0 1.2rem;padding:0;color:var(--muted);font-size:.95rem}
+    .crumbs li+li::before{content:">";margin-right:.55rem;opacity:.65}
+    .crumbs a{color:var(--muted);text-underline-offset:3px}
+    .crumbs a:hover{color:var(--text)}
+    .crumbs [aria-current]{color:var(--text);font-weight:700}
+
+    .notice{margin:0 0 1.2rem;padding:.9rem 1.1rem;border-radius:14px;border:1px solid rgba(255,217,138,.4);background:var(--warn-bg);color:var(--warn-text)}
+    .center-card{padding:clamp(1.4rem,4vw,2.4rem);max-width:44rem;margin-inline:auto;text-align:center}
+    .center-card p{color:var(--muted)}
+    .center-card ol{text-align:left;color:var(--muted);margin:1rem auto 1.4rem;max-width:34rem}
+    .center-card code{padding:.1rem .4rem;border-radius:6px;background:rgba(255,255,255,.1);color:var(--text);overflow-wrap:anywhere}
+
+    /* ---- Chapter header ---- */
+    .chead{display:flex;flex-wrap:wrap;gap:1rem 1.5rem;align-items:flex-start;justify-content:space-between;padding:clamp(1.3rem,3vw,2rem);margin-bottom:1.2rem}
+    .chead h1{font-size:clamp(1.9rem,5vw,3rem);margin:0 0 .9rem;outline:none;overflow-wrap:anywhere}
+    .meta{display:flex;flex-wrap:wrap;gap:.5rem}
+
+    /* ---- Intro + setup ---- */
+    .split{display:grid;gap:1.2rem;grid-template-columns:1.05fr .95fr}
+    @media (max-width:880px){.split{grid-template-columns:1fr}}
+    .panel{padding:clamp(1.3rem,3vw,1.9rem);min-width:0}
+    .panel h2{font-size:1.35rem;margin-bottom:.8rem}
+    .panel>p{color:var(--muted)}
+    .topics{list-style:none;margin:1rem 0 0;padding:0;display:grid;gap:.6rem}
+    .topics li{display:flex;gap:.7rem;align-items:flex-start}
+    .topics li::before{content:"";flex:none;width:9px;height:9px;margin-top:.55rem;border-radius:50%;background:linear-gradient(135deg,var(--cyan),var(--violet));box-shadow:0 0 8px rgba(85,214,255,.6)}
+    .bank{display:flex;flex-wrap:wrap;gap:.5rem;margin-top:1.2rem}
+
+    fieldset{border:0;margin:0 0 1.1rem;padding:0;min-width:0}
+    legend{font-weight:700;padding:0;margin-bottom:.7rem}
+    .presets{display:flex;flex-wrap:wrap;gap:.55rem;margin-bottom:1rem}
+    .preset{min-height:44px;padding:.35rem 1rem;border-radius:999px;border:1px solid var(--line);background:rgba(255,255,255,.06);color:var(--text);font:600 .95rem var(--font);cursor:pointer;transition:background .2s,border-color .2s,transform .2s}
+    .preset:hover{background:rgba(255,255,255,.12);transform:translateY(-1px)}
+    .preset[aria-pressed="true"]{background:rgba(85,214,255,.2);border-color:var(--cyan);box-shadow:inset 0 0 0 1px var(--cyan)}
+    .field label{display:block;margin-bottom:.4rem;color:var(--muted)}
+    .input{width:100%;min-height:52px;padding:.7rem 1rem;border-radius:14px;border:1px solid var(--line);background:rgba(4,8,22,.6);color:var(--text);font:600 1.15rem var(--font)}
+    .input[aria-invalid="true"]{border-color:var(--bad);box-shadow:0 0 0 1px var(--bad)}
+    .field-error{min-height:1.5em;margin:.5rem 0 0;color:var(--bad-text);font-weight:600}
+    .mark-note{margin:0 0 1.2rem;color:var(--muted);font-size:.95rem}
+    .setup .btn{width:100%}
+
+    /* ---- Quiz: progress panel ---- */
+    #viewQuiz{scroll-margin-top:84px}
+    .qctx{margin:0 0 .8rem;color:var(--muted);font-weight:600;overflow-wrap:anywhere}
+    .pp{display:grid;grid-template-columns:1fr auto;gap:1rem 1.5rem;align-items:center;padding:1.2rem 1.4rem;margin-bottom:1rem}
+    .pp-sub{margin:0 0 .7rem;font-weight:700}
+    .bar{height:8px;border-radius:99px;background:rgba(255,255,255,.13);overflow:hidden}
+    .bar span{display:block;height:100%;width:0;border-radius:inherit;background:linear-gradient(90deg,var(--cyan),var(--violet));box-shadow:0 0 12px rgba(85,214,255,.6);transition:width .6s cubic-bezier(.2,.8,.2,1)}
+    .ring{position:relative;width:104px;height:104px;flex:none}
+    .ring svg{width:100%;height:100%;transform:rotate(-90deg);overflow:visible}
+    .ring circle{fill:none;stroke-linecap:round;stroke-width:9}
+    .ring .track{stroke:rgba(255,255,255,.13)}
+    .ring .fill{transition:stroke-dashoffset .6s cubic-bezier(.2,.8,.2,1);filter:drop-shadow(0 0 6px rgba(85,214,255,.55))}
+    .ring-text{position:absolute;inset:0;display:grid;place-content:center;text-align:center;line-height:1.2}
+    .ring-text b{font-size:1.15rem}
+    .ring-text small{color:var(--muted);font-size:.82rem}
+    .ring.big{width:156px;height:156px}
+    .ring.big .ring-text b{font-size:1.7rem}
+    .ring.big .ring-text small{font-size:.95rem}
+
+    /* ---- Quiz: question card ---- */
+    .qcard{padding:clamp(1.2rem,3vw,2rem)}
+    .q-top{display:flex;flex-wrap:wrap;gap:.5rem 1rem;align-items:center;justify-content:space-between;margin-bottom:1rem}
+    .q-label{margin:0;font-weight:800;color:var(--cyan)}
+    .q-text{margin:0 0 1.3rem;font-size:clamp(1.15rem,2.7vw,1.45rem);line-height:1.5;font-weight:700;overflow-wrap:anywhere;outline:none}
+    .diff.easy{color:var(--good-text);border-color:rgba(75,227,163,.45)}
+    .diff.medium{color:var(--warn-text);border-color:rgba(255,217,138,.45)}
+    .diff.hard{color:var(--bad-text);border-color:rgba(255,122,142,.45)}
+
+    .options{display:grid;gap:.75rem;margin:0}
+    .opt{position:relative;min-width:0}
+    .opt input{position:absolute;opacity:0;width:1px;height:1px;margin:0}
+    .opt label{
+      display:flex;align-items:flex-start;gap:.9rem;min-height:58px;padding:.85rem 1rem;border-radius:16px;
+      border:1px solid var(--line);background:rgba(255,255,255,.05);cursor:pointer;
+      transition:border-color .2s,background .2s,transform .2s,box-shadow .2s;
+    }
+    .opt label:hover{border-color:rgba(255,255,255,.38);background:rgba(255,255,255,.09)}
+    .opt .letter{flex:none;display:grid;place-items:center;width:36px;height:36px;border-radius:50%;border:2px solid rgba(255,255,255,.4);font-weight:800;transition:background .2s,border-color .2s,color .2s}
+    .opt .otext{flex:1;min-width:0;padding-top:.3rem;font-size:1.05rem;line-height:1.45;overflow-wrap:anywhere}
+    .opt .otag{display:block;margin-top:.25rem;font-size:.88rem;font-weight:800}
+    .opt .otag:empty{display:none}
+    .opt input:focus-visible+label{outline:3px solid #a8ecff;outline-offset:3px}
+    .opt input:checked+label{border-color:var(--cyan);background:rgba(85,214,255,.14);box-shadow:0 0 0 1px var(--cyan),0 0 22px rgba(85,214,255,.18)}
+    .opt input:checked+label .letter{background:linear-gradient(135deg,#43ccf6,#9a82ff);border-color:transparent;color:#04112a}
+    .opt input:disabled+label{cursor:default}
+    .opt input:disabled+label:hover{background:rgba(255,255,255,.05);border-color:var(--line)}
+    .opt label.correct,.opt input:checked+label.correct{border-color:var(--good);background:var(--good-bg);box-shadow:0 0 0 1px var(--good)}
+    .opt label.correct .letter,.opt input:checked+label.correct .letter{background:var(--good);border-color:transparent;color:#032015}
+    .opt label.correct .otag{color:var(--good-text)}
+    .opt label.wrong,.opt input:checked+label.wrong{border-color:var(--bad);background:var(--bad-bg);box-shadow:0 0 0 1px var(--bad)}
+    .opt label.wrong .letter,.opt input:checked+label.wrong .letter{background:var(--bad);border-color:transparent;color:#2a040c}
+    .opt label.wrong .otag{color:var(--bad-text)}
+
+    .feedback{margin-top:1.1rem;font-size:.97rem}
+    .feedback:empty{display:none}
+    .fb{padding:.9rem 1.1rem;border-radius:14px;border:1px solid var(--line)}
+    .fb.good{background:var(--good-bg);border-color:rgba(75,227,163,.5)}
+    .fb.bad{background:var(--bad-bg);border-color:rgba(255,122,142,.5)}
+    .fb.warn{background:var(--warn-bg);border-color:rgba(255,217,138,.45)}
+    .fb-title{margin:0;font-weight:800;font-size:1.02rem}
+    .fb.good .fb-title{color:var(--good-text)}
+    .fb.bad .fb-title{color:var(--bad-text)}
+    .fb.warn .fb-title{color:var(--warn-text)}
+    .fb-exp{margin:.45rem 0 0;color:var(--text)}
+    .q-actions{display:flex;flex-wrap:wrap;gap:.75rem;margin-top:1.3rem}
+    .q-actions .btn{flex:1 1 170px}
+    .linkish{background:none;border:0;padding:.4rem .2rem;color:var(--muted);font:600 .92rem var(--font);text-decoration:underline;text-underline-offset:3px;cursor:pointer;min-height:40px}
+    .linkish:hover{color:var(--text)}
+
+    /* ---- Results ---- */
+    #viewResults h2{outline:none}
+    .res-top{display:grid;grid-template-columns:auto 1fr;gap:1.4rem 2rem;align-items:center;padding:clamp(1.3rem,3vw,2rem);margin-bottom:1.2rem}
+    @media (max-width:700px){.res-top{grid-template-columns:1fr;justify-items:center;text-align:center}}
+    .res-top h2{font-size:clamp(1.4rem,3.4vw,2rem);margin-bottom:.5rem;overflow-wrap:anywhere}
+    .perf-title{margin:0 0 .3rem;font-size:1.25rem;font-weight:800}
+    .perf-text{margin:0;color:var(--muted)}
+    .stats{display:grid;grid-template-columns:repeat(3,1fr);gap:.8rem;margin:0 0 1.2rem}
+    @media (max-width:560px){.stats{grid-template-columns:repeat(2,1fr)}}
+    .stat{padding:1rem 1.1rem;border-radius:18px;min-width:0}
+    .stat dt{color:var(--muted);font-size:.9rem}
+    .stat dd{margin:.1rem 0 0;font-size:clamp(1.4rem,3.4vw,1.9rem);font-weight:800;letter-spacing:-.02em}
+    .stat.good dd{color:var(--good-text)}
+    .stat.bad dd{color:var(--bad-text)}
+    .break{display:grid;grid-template-columns:1fr 1fr;gap:1.2rem;margin-bottom:1.2rem}
+    @media (max-width:760px){.break{grid-template-columns:1fr}}
+    .break h3{margin-bottom:.8rem}
+    .break ul{list-style:none;margin:0;padding:0;display:grid;gap:.5rem}
+    .break li{display:flex;justify-content:space-between;gap:1rem;color:var(--muted)}
+    .break li b{color:var(--text);white-space:nowrap}
+    .res-actions{display:flex;flex-wrap:wrap;gap:.75rem;margin-bottom:2rem}
+    .res-actions .btn{flex:1 1 190px}
+
+    .review-head{display:flex;flex-wrap:wrap;gap:.8rem 1rem;align-items:center;justify-content:space-between;margin-bottom:1rem}
+    .review-head h2{margin:0}
+    .seg{display:inline-flex;gap:.4rem}
+    .rv-list{list-style:none;margin:0;padding:0;display:grid;gap:1rem}
+    .rv{padding:clamp(1.1rem,2.6vw,1.6rem);min-width:0}
+    .rv-top{display:flex;flex-wrap:wrap;gap:.5rem .8rem;align-items:center;margin-bottom:.7rem}
+    .rv-num{font-weight:800}
+    .verdict{margin-left:auto;font-weight:800;padding:.15rem .7rem;border-radius:999px;border:1px solid}
+    .verdict.ok{color:var(--good-text);border-color:rgba(75,227,163,.5);background:var(--good-bg)}
+    .verdict.no{color:var(--bad-text);border-color:rgba(255,122,142,.5);background:var(--bad-bg)}
+    .rv-q{margin:0 0 .9rem;font-weight:700;font-size:1.08rem;overflow-wrap:anywhere}
+    .rv-opts{list-style:none;margin:0 0 .9rem;padding:0;display:grid;gap:.45rem}
+    .rv-opts li{padding:.55rem .8rem;border-radius:12px;border:1px solid var(--line);background:rgba(255,255,255,.04);overflow-wrap:anywhere}
+    .rv-opts li.is-correct{border-color:var(--good);background:var(--good-bg)}
+    .rv-opts li.is-wrong{border-color:var(--bad);background:var(--bad-bg)}
+    .rv-opts .tag{display:block;font-size:.85rem;font-weight:800}
+    .rv-opts .is-correct .tag{color:var(--good-text)}
+    .rv-opts .is-wrong .tag{color:var(--bad-text)}
+    .rv-exp{margin:0;color:var(--muted)}
+    .rv-exp strong{color:var(--text)}
+  </style>
+</head>
+<body>
+  <a class="skip" href="#main">Skip to content</a>
+
+  <!-- ===== NAVIGATION ===== -->
+  <header class="nav">
+    <div class="wrap nav-inner">
+      <a class="brand" href="index.html" aria-label="MCQ Master home">
+        <svg viewBox="0 0 40 40" aria-hidden="true">
+          <defs><linearGradient id="logoGrad" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#55d6ff"/><stop offset="1" stop-color="#a58bff"/></linearGradient></defs>
+          <path d="M20 2 36 11v18L20 38 4 29V11z" fill="rgba(255,255,255,.08)" stroke="url(#logoGrad)" stroke-width="2.2" stroke-linejoin="round"/>
+          <path d="M20 2v36M4 11l32 18M36 11 4 29" stroke="url(#logoGrad)" stroke-width="1" opacity=".35"/>
+          <path d="M11 22h18M11 18h18" stroke="#eaf0ff" stroke-width="2.2" stroke-linecap="round" opacity=".9"/>
+        </svg>
+        <span>MCQ Master</span>
+      </a>
+      <button class="menu-btn" id="menuBtn" type="button" aria-expanded="false" aria-controls="navLinks" aria-label="Toggle menu">
+        <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" aria-hidden="true"><path d="M4 7h16M4 12h16M4 17h16"/></svg>
+      </button>
+      <ul class="nav-links" id="navLinks">
+        <li><a href="index.html">Home</a></li>
+        <li><a href="index.html#subjects">Subjects</a></li>
+        <li><a href="index.html#about">About</a></li>
+        <li><a class="btn btn-primary" href="chemistry.html?chapter=1" data-transition="Opening Chapter 1…">Start Practicing</a></li>
+      </ul>
+    </div>
+  </header>
+  <!-- ===== PAGE TRANSITION OVERLAY (shown briefly when moving between pages) ===== -->
+  <div class="transition" id="transition" aria-hidden="true">
+    <div class="tr-box glass">
+      <svg class="tr-ring" viewBox="0 0 64 64">
+        <defs><linearGradient id="trGrad" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#55d6ff"/><stop offset="1" stop-color="#a58bff"/></linearGradient></defs>
+        <circle class="track" cx="32" cy="32" r="26"/>
+        <circle class="fill" cx="32" cy="32" r="26"/>
+      </svg>
+      <p class="tr-text" id="trText">Loading…</p>
+      <div class="tr-line"><span></span></div>
+    </div>
+  </div>
+
+  <main id="main" class="wrap page">
+
+    <!-- Breadcrumb -->
+    <nav class="crumbs" aria-label="Breadcrumb">
+      <ol id="crumbs">
+        <li><a href="index.html">Home</a></li>
+        <li aria-current="page">Chemistry</li>
+      </ol>
+    </nav>
+
+    <noscript><p class="notice">This quiz needs JavaScript. Please enable it in your browser settings.</p></noscript>
+
+    <!-- ===== LOADING ===== -->
+    <section id="viewLoading" aria-live="polite">
+      <p class="center-card glass">Loading questions…</p>
+    </section>
+
+    <!-- ===== ERROR (JSON could not be loaded) ===== -->
+    <section id="viewError" hidden>
+      <div class="center-card glass">
+        <h1 style="font-size:1.6rem">Questions could not be loaded</h1>
+        <p id="errMsg"></p>
+        <ol>
+          <li>Start XAMPP and switch on <strong>Apache</strong>.</li>
+          <li>Put the <code>mcq-preparation</code> folder inside <code>xampp/htdocs</code>.</li>
+          <li>Open <code>http://localhost/mcq-preparation/</code> in your browser.</li>
+        </ol>
+        <button class="btn btn-primary" type="button" id="retryLoad">Try again</button>
+      </div>
+    </section>
+
+    <!-- ===== CHAPTER SELECTION (no ?chapter= in the address) ===== -->
+    <section id="viewChapters" hidden aria-labelledby="chooseTitle">
+      <div class="chead glass">
+        <div>
+          <h1 id="chooseTitle" tabindex="-1" style="outline:none">Chemistry Chapters</h1>
+          <div class="meta"><span class="chip">Chemistry</span><span class="chip">Class 10th</span><span class="chip">Sindh Textbook Board</span></div>
+        </div>
+        <a class="btn" href="index.html">Back to Home</a>
+      </div>
+      <p class="notice" id="chapterNotice" role="alert" hidden></p>
+      <div class="chapter-grid" id="chapterGrid"></div>
+    </section>
+
+    <!-- ===== CHAPTER INTRO + QUIZ SETUP ===== -->
+    <section id="viewIntro" hidden aria-labelledby="chTitle">
+      <header class="chead glass">
+        <div>
+          <h1 id="chTitle" tabindex="-1">Chemical Equilibrium</h1>
+          <div class="meta" id="chMeta"></div>
+        </div>
+        <a class="btn" href="chemistry.html">Back to Chapters</a>
+      </header>
+
+      <div class="split">
+        <article class="panel glass">
+          <h2>About this chapter</h2>
+          <p id="chDesc"></p>
+          <p style="margin-bottom:0">You can practice:</p>
+          <ul class="topics" id="chTopics"></ul>
+          <div class="bank" id="chBank"></div>
+        </article>
+
+        <form class="panel glass setup" id="setupForm" novalidate>
+          <h2>Set up your quiz</h2>
+          <fieldset>
+            <legend>How many questions?</legend>
+            <div class="presets" id="presets"></div>
+            <div class="field">
+              <label for="countInput" id="countLabel">Or type a custom number</label>
+              <input class="input" id="countInput" type="text" inputmode="numeric" autocomplete="off" value="10" aria-describedby="countError">
+              <p class="field-error" id="countError" role="alert"></p>
+            </div>
+          </fieldset>
+          <p class="mark-note">Questions start easy and get harder. Each question carries 1 mark and there is no negative marking.</p>
+          <button class="btn btn-primary btn-lg" type="submit">Start Practice</button>
+        </form>
+      </div>
+    </section>
+
+    <!-- ===== QUIZ ===== -->
+    <section id="viewQuiz" hidden aria-label="Quiz">
+      <p class="qctx" id="qctx"></p>
+
+      <div class="pp glass">
+        <div>
+          <p class="pp-sub" id="ppSub">0 of 10 questions checked</p>
+          <div class="bar" id="bar" role="progressbar" aria-label="Quiz progress" aria-valuemin="0" aria-valuemax="100" aria-valuenow="0"><span id="barFill"></span></div>
+        </div>
+        <div class="ring" aria-hidden="true">
+          <svg viewBox="0 0 120 120">
+            <defs><linearGradient id="gradQ" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#55d6ff"/><stop offset="1" stop-color="#a58bff"/></linearGradient></defs>
+            <circle class="track" cx="60" cy="60" r="52"/>
+            <circle class="fill" id="ringFill" cx="60" cy="60" r="52" stroke="url(#gradQ)"/>
+          </svg>
+          <div class="ring-text"><b id="ringMain">0 / 10</b><small id="ringPct">0%</small></div>
+        </div>
+      </div>
+
+      <article class="qcard glass">
+        <div class="q-top">
+          <p class="q-label" id="qLabel">Question 1 of 10</p>
+          <span class="chip diff easy" id="qDiff">Easy</span>
+        </div>
+        <h2 class="q-text" id="qText" tabindex="-1"></h2>
+        <div class="options" id="options" role="radiogroup" aria-labelledby="qText"></div>
+        <div class="feedback" id="feedback" role="status" aria-live="polite"></div>
+        <div class="q-actions">
+          <button class="btn btn-primary" type="button" id="checkBtn">Check Answer</button>
+          <button class="btn" type="button" id="nextBtn" disabled>Next Question</button>
+        </div>
+        <button class="linkish" type="button" id="quitBtn">End quiz and go back to setup</button>
+      </article>
+    </section>
+
+    <!-- ===== RESULTS ===== -->
+    <section id="viewResults" hidden aria-labelledby="resTitle">
+      <div class="res-top glass">
+        <div class="ring big" role="img" id="resRingWrap">
+          <svg viewBox="0 0 120 120" aria-hidden="true">
+            <defs><linearGradient id="gradR" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#55d6ff"/><stop offset="1" stop-color="#a58bff"/></linearGradient></defs>
+            <circle class="track" cx="60" cy="60" r="52"/>
+            <circle class="fill" id="resRing" cx="60" cy="60" r="52" stroke="url(#gradR)"/>
+          </svg>
+          <div class="ring-text" aria-hidden="true"><b id="resRingMain">0%</b><small id="resRingSub">0 / 0</small></div>
+        </div>
+        <div>
+          <h2 id="resTitle" tabindex="-1">Quiz Results</h2>
+          <p class="perf-title" id="perfTitle"></p>
+          <p class="perf-text" id="perfText"></p>
+        </div>
+      </div>
+
+      <dl class="stats" id="stats"></dl>
+
+      <div class="break">
+        <section class="panel glass" aria-labelledby="diffHead">
+          <h3 id="diffHead">Score by difficulty</h3>
+          <ul id="diffList"></ul>
+        </section>
+        <section class="panel glass" aria-labelledby="topicHead">
+          <h3 id="topicHead">Topics to revise</h3>
+          <ul id="topicList"></ul>
+        </section>
+      </div>
+
+      <div class="res-actions">
+        <button class="btn btn-primary" type="button" id="retryBtn">Try a New Set</button>
+        <button class="btn" type="button" id="settingsBtn">Change Quiz Settings</button>
+        <a class="btn" href="chemistry.html">Back to Chapters</a>
+      </div>
+
+      <section aria-labelledby="reviewHead">
+        <div class="review-head">
+          <h2 id="reviewHead">Answer review</h2>
+          <div class="seg" role="group" aria-label="Filter review">
+            <button class="preset" type="button" id="fltAll" aria-pressed="true">All questions</button>
+            <button class="preset" type="button" id="fltWrong" aria-pressed="false">Incorrect only</button>
+          </div>
+        </div>
+        <ol class="rv-list" id="reviewList"></ol>
+      </section>
+    </section>
+  </main>
+
+  <!-- ===== FOOTER ===== -->
+  <footer class="footer">
+    <div class="wrap">
+      <div class="footer-grid">
+        <div>
+          <a class="brand" href="index.html" aria-label="MCQ Master home">
+            <svg viewBox="0 0 40 40" aria-hidden="true"><path d="M20 2 36 11v18L20 38 4 29V11z" fill="rgba(255,255,255,.08)" stroke="#7fb6ff" stroke-width="2.2" stroke-linejoin="round"/><path d="M11 22h18M11 18h18" stroke="#eaf0ff" stroke-width="2.2" stroke-linecap="round"/></svg>
+            <span>MCQ Master</span>
+          </a>
+          <p style="margin-top:.8rem;max-width:30rem">Chapter-wise MCQ practice for school tests and examinations. Learn Smart. Practice Better. Score Higher.</p>
+        </div>
+        <nav aria-label="Footer">
+          <h2>Quick links</h2>
+          <ul>
+            <li><a href="index.html">Home</a></li>
+            <li><a href="index.html#subjects">Subjects</a></li>
+            <li><a href="index.html#chapters">Chemistry chapters</a></li>
+            <li><a href="index.html#about">About</a></li>
+          </ul>
+        </nav>
+      </div>
+      <div class="footer-bottom">
+        <p>&copy; <span id="year">2026</span> MCQ Master. All rights reserved.</p>
+        <p>Made for students.</p>
+      </div>
+    </div>
+  </footer>
+
+  <script>
+    /* =====================================================
+       SHARED: mobile menu + page transition + footer year
+       ===================================================== */
+    (function () {
+      var btn = document.getElementById('menuBtn');
+      var links = document.getElementById('navLinks');
+      var overlay = document.getElementById('transition');
+      var label = document.getElementById('trText');
+      var reduce = window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+      var year = document.getElementById('year');
+      if (year) year.textContent = new Date().getFullYear();
+
+      function closeMenu() {
+        if (!links) return;
+        links.classList.remove('open');
+        btn.setAttribute('aria-expanded', 'false');
+      }
+      if (btn && links) {
+        btn.addEventListener('click', function () {
+          var open = links.classList.toggle('open');
+          btn.setAttribute('aria-expanded', open ? 'true' : 'false');
+        });
+        links.addEventListener('click', function (e) { if (e.target.closest('a')) closeMenu(); });
+        document.addEventListener('keydown', function (e) { if (e.key === 'Escape') closeMenu(); });
+      }
+
+      // Short (about 0.85 s) transition: thin line + circular ring fill, then navigate.
+      // With reduced motion, or if the overlay is missing, it simply navigates.
+      window.goWithTransition = function (url, text) {
+        if (reduce || !overlay) { window.location.href = url; return; }
+        if (label) label.textContent = text || 'Loading…';
+        overlay.classList.add('active');
+        void overlay.offsetWidth;            // let the browser apply the start state
+        overlay.classList.add('run');
+        setTimeout(function () { window.location.href = url; }, 850);
+      };
+
+      // Any link with data-transition="message" gets the animation (normal links still work without JS).
+      document.addEventListener('click', function (e) {
+        var a = e.target.closest ? e.target.closest('a[data-transition]') : null;
+        if (!a || e.defaultPrevented || e.button !== 0 || e.metaKey || e.ctrlKey || e.shiftKey || e.altKey) return;
+        e.preventDefault();
+        window.goWithTransition(a.href, a.getAttribute('data-transition'));
+      });
+
+      // If the user presses Back, make sure the overlay is not left on screen.
+      window.addEventListener('pageshow', function () {
+        if (overlay) overlay.classList.remove('active', 'run');
+      });
+    })();
+
+    /* =====================================================
+       MCQ ENGINE  (questions come from data/chemistry.json)
+       ===================================================== */
+    (function () {
+      'use strict';
+
+      /* ---------- LOGIC-START: pure functions (no page access) ---------- */
+      var LEVELS = ['easy', 'medium', 'hard'];
+      var LEVEL_NAMES = { easy: 'Easy', medium: 'Medium', hard: 'Hard' };
+
+      function shuffle(arr, rng) {
+        var a = arr.slice();
+        for (var i = a.length - 1; i > 0; i--) {
+          var j = Math.floor(rng() * (i + 1));
+          var t = a[i]; a[i] = a[j]; a[j] = t;
+        }
+        return a;
+      }
+
+      // Keep only well-formed questions, so a typo in the JSON can never break a quiz.
+      function cleanQuestions(list) {
+        var out = [], seen = {};
+        (Array.isArray(list) ? list : []).forEach(function (q, i) {
+          var ok = q && typeof q.question === 'string' && q.question.trim() &&
+            Array.isArray(q.options) && q.options.length === 4 &&
+            q.options.every(function (o) { return typeof o === 'string' && o.trim(); }) &&
+            /^[ABCD]$/.test(q.answer) && LEVELS.indexOf(q.difficulty) > -1;
+          if (!ok) { if (window.console) console.warn('Skipped invalid question at position ' + (i + 1), q); return; }
+          var id = q.id ? String(q.id) : 'q' + i;
+          if (seen[id]) { if (window.console) console.warn('Skipped duplicate question id: ' + id); return; }
+          seen[id] = true;
+          out.push({ id: id, difficulty: q.difficulty, topic: q.topic || '', question: q.question,
+                     options: q.options, answer: q.answer, explanation: q.explanation || '' });
+        });
+        return out;
+      }
+
+      function validateCount(raw, max) {
+        var s = String(raw == null ? '' : raw).trim();
+        function fail(m) { return { ok: false, message: m }; }
+        if (s === '') return fail('Please enter how many questions you want (1 to ' + max + ').');
+        if (/^[-+]?\d*\.\d*$/.test(s) && /\d/.test(s)) return fail('Please enter a whole number. Decimals are not allowed.');
+        if (!/^[-+]?\d+$/.test(s)) return fail('Please use digits only, for example 10.');
+        var n = parseInt(s, 10);
+        if (n < 1) return fail('The number of questions must be at least 1. Zero and negative numbers are not allowed.');
+        if (n > max) return fail('This chapter has only ' + max + ' questions. Please enter a number from 1 to ' + max + '.');
+        return { ok: true, value: n };
+      }
+
+      // How many questions to take from each difficulty level for a quiz of n questions.
+      function allocate(avail, n) {
+        var present = LEVELS.filter(function (l) { return avail[l] > 0; });
+        var total = present.reduce(function (s, l) { return s + avail[l]; }, 0);
+        var alloc = { easy: 0, medium: 0, hard: 0 };
+        if (n <= 0 || total === 0) return alloc;
+        if (n > total) n = total;
+
+        if (n < present.length) {                       // 1 or 2 questions: spread across the range
+          var chosen = (n === 1) ? [present[Math.floor((present.length - 1) / 2)]]
+                                 : [present[0], present[present.length - 1]];
+          chosen.forEach(function (l) { alloc[l] = 1; });
+          return alloc;
+        }
+
+        var sum = 0, rema = [];
+        present.forEach(function (l) {                  // proportional share, at least 1 of each level
+          var ideal = n * avail[l] / total;
+          var base = Math.min(avail[l], Math.max(1, Math.floor(ideal)));
+          alloc[l] = base; sum += base;
+          rema.push({ l: l, frac: ideal - Math.floor(ideal) });
+        });
+        while (sum > n) {                               // only possible with very uneven banks
+          var big = present.slice().sort(function (a, b) { return alloc[b] - alloc[a]; })[0];
+          if (alloc[big] <= 1) break;
+          alloc[big]--; sum--;
+        }
+        rema.sort(function (a, b) { return b.frac - a.frac; });
+        var guard = 0;
+        while (sum < n && guard++ < 1000) {             // hand out the remainder, biggest fraction first
+          var gave = false;
+          for (var k = 0; k < rema.length && sum < n; k++) {
+            var L = rema[k].l;
+            if (alloc[L] < avail[L]) { alloc[L]++; sum++; gave = true; }
+          }
+          if (!gave) break;
+        }
+        return alloc;
+      }
+
+      // Balanced random subset, ordered easy -> medium -> hard, no repeats.
+      function selectQuestions(bank, n, rng) {
+        rng = rng || Math.random;
+        var groups = { easy: [], medium: [], hard: [] };
+        bank.forEach(function (q) { groups[q.difficulty].push(q); });
+        var alloc = allocate({ easy: groups.easy.length, medium: groups.medium.length, hard: groups.hard.length }, n);
+        var out = [];
+        LEVELS.forEach(function (l) { out = out.concat(shuffle(groups[l], rng).slice(0, alloc[l])); });
+        return out;
+      }
+
+      // Marks come ONLY from records that were checked: 1 mark per correct answer, no negative marking.
+      function scoreQuiz(records, total) {
+        var correct = 0, incorrect = 0;
+        records.forEach(function (r) {
+          if (r && r.checked) { if (r.isCorrect) correct++; else incorrect++; }
+        });
+        return { total: total, correct: correct, incorrect: incorrect, marks: correct, maxMarks: total,
+                 percentage: total > 0 ? Math.round(correct / total * 100) : 0 };
+      }
+
+      function difficultyBreakdown(questions, records) {
+        var res = {};
+        LEVELS.forEach(function (l) { res[l] = { correct: 0, total: 0 }; });
+        questions.forEach(function (q, i) {
+          res[q.difficulty].total++;
+          if (records[i] && records[i].checked && records[i].isCorrect) res[q.difficulty].correct++;
+        });
+        return res;
+      }
+
+      function missedTopics(questions, records) {
+        var map = {};
+        questions.forEach(function (q, i) {
+          if (records[i] && records[i].checked && !records[i].isCorrect && q.topic) map[q.topic] = (map[q.topic] || 0) + 1;
+        });
+        return Object.keys(map).map(function (t) { return { topic: t, count: map[t] }; })
+          .sort(function (a, b) { return b.count - a.count || (a.topic < b.topic ? -1 : 1); });
+      }
+
+      function performance(p) {
+        if (p === 100) return ['Perfect score!', 'Every answer was correct. Try a larger quiz to keep your accuracy high.'];
+        if (p >= 85) return ['Excellent work!', 'You know this chapter very well. Check the few mistakes below and you will be ready.'];
+        if (p >= 70) return ['Good job!', 'You have a solid understanding. Revise the topics listed below to push your score higher.'];
+        if (p >= 50) return ['Fair attempt.', 'You are on the right track. Read the explanations carefully and practice again.'];
+        return ['Keep practicing.', 'Go through the explanations and the topics to revise, then try a new set. Every attempt helps.'];
+      }
+      /* ---------- LOGIC-END ---------- */
+
+
+      /* ---------- Page code ---------- */
+      var DATA_URL = 'data/chemistry.json';
+      var PRESETS = [5, 10, 15, 20, 25, 30, 40, 50];
+      var LETTERS = ['A', 'B', 'C', 'D'];
+      var RING_R = 52, RING_C = 2 * Math.PI * RING_R;
+      var SVG_ARROW = '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg>';
+
+      var $ = function (id) { return document.getElementById(id); };
+      function el(tag, cls, text) {
+        var e = document.createElement(tag);
+        if (cls) e.className = cls;
+        if (text != null) e.textContent = text;
+        return e;
+      }
+
+      var state = { subject: 'Chemistry', klass: '10th', board: 'Sindh Textbook Board', chapters: [], chapter: null, quiz: null, lastCount: 10 };
+      var VIEWS = ['viewLoading', 'viewError', 'viewChapters', 'viewIntro', 'viewQuiz', 'viewResults'];
+
+      function show(name, focusId) {
+        VIEWS.forEach(function (v) { $(v).hidden = (v !== name); });
+        window.scrollTo({ top: 0, behavior: 'auto' });
+        if (focusId && $(focusId)) $(focusId).focus({ preventScroll: true });
+      }
+
+      function setCrumbs(ch) {
+        var ol = $('crumbs');
+        ol.innerHTML = '';
+        var li1 = el('li'); var a1 = el('a', '', 'Home'); a1.href = 'index.html'; li1.appendChild(a1); ol.appendChild(li1);
+        var li2 = el('li');
+        if (ch) { var a2 = el('a', '', 'Chemistry'); a2.href = 'chemistry.html'; li2.appendChild(a2); }
+        else { li2.textContent = 'Chemistry'; li2.setAttribute('aria-current', 'page'); }
+        ol.appendChild(li2);
+        if (ch) { var li3 = el('li', '', ch.title); li3.setAttribute('aria-current', 'page'); ol.appendChild(li3); }
+      }
+
+      function setRing(circle, pct) {
+        circle.style.strokeDasharray = RING_C;
+        circle.style.strokeDashoffset = RING_C * (1 - Math.max(0, Math.min(100, pct)) / 100);
+      }
+
+      /* ----- loading the JSON ----- */
+      function load() {
+        show('viewLoading');
+        fetch(DATA_URL, { cache: 'no-cache' })
+          .then(function (r) { if (!r.ok) throw new Error('The server answered ' + r.status + ' for ' + DATA_URL + '.'); return r.json(); })
+          .then(function (data) {
+            if (!data || !Array.isArray(data.chapters)) throw new Error('The JSON file does not contain a "chapters" list.');
+            state.subject = data.subject || state.subject;
+            state.klass = data.class || state.klass;
+            state.board = data.board || state.board;
+            state.chapters = data.chapters.map(function (ch) {
+              var bank = cleanQuestions(ch.questions);
+              return { id: ch.id, title: ch.title || 'Title not added yet', description: ch.description || '',
+                       topics: Array.isArray(ch.topics) ? ch.topics : [], bank: bank,
+                       live: ch.available === true && bank.length > 0 };
+            });
+            route();
+          })
+          .catch(function (err) {
+            var msg = (window.location.protocol === 'file:')
+              ? 'This page was opened directly from a file (file://), and browsers block loading the JSON that way. Please run the site through a local server such as XAMPP.'
+              : (err && err.message ? err.message : 'Something went wrong while loading the questions.');
+            $('errMsg').textContent = msg;
+            setCrumbs(null);
+            show('viewError');
+          });
+      }
+
+      /* ----- choose what to show from ?chapter= ----- */
+      function route() {
+        var raw = new URLSearchParams(window.location.search).get('chapter');
+        if (raw === null || raw === '') { openChapterList(); return; }
+        var ch = state.chapters.filter(function (c) { return String(c.id) === String(raw).trim(); })[0];
+        if (!ch) { openChapterList('Chapter "' + raw + '" was not found. Please choose a chapter below.'); return; }
+        if (!ch.live) { openChapterList('Chapter ' + ch.id + ' does not have any questions yet. Please choose an available chapter.'); return; }
+        openIntro(ch);
+      }
+
+      function openChapterList(message) {
+        state.chapter = null;
+        document.title = 'Chemistry Chapters | Class 10 | MCQ Master';
+        setCrumbs(null);
+        var n = $('chapterNotice');
+        n.hidden = !message; n.textContent = message || '';
+        var grid = $('chapterGrid'); grid.innerHTML = '';
+        state.chapters.forEach(function (ch) {
+          var on = ch.live;
+          var card = el(on ? 'a' : 'div', 'chapter glass ' + (on ? 'is-live' : 'is-locked'));
+          if (on) { card.href = 'chemistry.html?chapter=' + encodeURIComponent(ch.id); card.setAttribute('data-transition', 'Opening Chapter ' + ch.id + '…'); }
+          else card.setAttribute('aria-disabled', 'true');
+          card.appendChild(el('span', 'ch-no', 'Chapter ' + ch.id));
+          card.appendChild(el('h3', '', ch.title));
+          card.appendChild(el('p', 'ch-note', on ? ch.bank.length + ' MCQs ready' : 'Content not added yet'));
+          var foot = el('div', 'ch-foot');
+          foot.appendChild(el('span', 'status ' + (on ? 'live' : 'soon'), on ? 'Available' : 'Coming Soon'));
+          if (on) { var go = el('span', 'go'); go.innerHTML = SVG_ARROW; foot.appendChild(go); }
+          card.appendChild(foot);
+          grid.appendChild(card);
+        });
+        show('viewChapters', 'chooseTitle');
+      }
+
+      /* ----- chapter intro + setup ----- */
+      function openIntro(ch) {
+        state.chapter = ch;
+        document.title = ch.title + ' | Chemistry Class 10 | MCQ Master';
+        setCrumbs(ch);
+
+        $('chTitle').textContent = ch.title;
+        var meta = $('chMeta'); meta.innerHTML = '';
+        [state.subject, 'Chapter ' + ch.id, 'Class ' + state.klass, state.board].forEach(function (t) { meta.appendChild(el('span', 'chip', t)); });
+
+        $('chDesc').textContent = ch.description || 'Practice multiple-choice questions from this chapter.';
+        var tl = $('chTopics'); tl.innerHTML = '';
+        ch.topics.forEach(function (t) { tl.appendChild(el('li', '', t)); });
+
+        var counts = { easy: 0, medium: 0, hard: 0 };
+        ch.bank.forEach(function (q) { counts[q.difficulty]++; });
+        var bank = $('chBank'); bank.innerHTML = '';
+        bank.appendChild(el('span', 'chip', ch.bank.length + ' questions in the bank'));
+        LEVELS.forEach(function (l) { if (counts[l]) bank.appendChild(el('span', 'chip diff ' + l, counts[l] + ' ' + LEVEL_NAMES[l].toLowerCase())); });
+
+        buildPresets(ch.bank.length);
+        setCount(Math.min(state.lastCount, ch.bank.length));
+        $('countLabel').textContent = 'Or type a custom number (1 to ' + ch.bank.length + ')';
+        show('viewIntro', 'chTitle');
+      }
+
+      function buildPresets(max) {
+        var box = $('presets'); box.innerHTML = '';
+        var list = PRESETS.filter(function (n) { return n <= max; });
+        if (list.indexOf(max) === -1) list.push(max);
+        list.forEach(function (n) {
+          var b = el('button', 'preset', n === max && PRESETS.indexOf(n) === -1 ? 'All ' + n + ' Questions' : n + ' Questions');
+          b.type = 'button'; b.setAttribute('data-n', n); b.setAttribute('aria-pressed', 'false');
+          b.addEventListener('click', function () { setCount(n); });
+          box.appendChild(b);
+        });
+      }
+
+      function syncPresets() {
+        var v = $('countInput').value.trim();
+        Array.prototype.forEach.call($('presets').children, function (b) {
+          b.setAttribute('aria-pressed', b.getAttribute('data-n') === v ? 'true' : 'false');
+        });
+      }
+
+      function showCountError(msg) {
+        $('countError').textContent = msg || '';
+        if (msg) $('countInput').setAttribute('aria-invalid', 'true'); else $('countInput').removeAttribute('aria-invalid');
+      }
+
+      function setCount(n) { $('countInput').value = String(n); showCountError(''); syncPresets(); }
+
+      $('countInput').addEventListener('input', function () {
+        syncPresets();
+        var v = this.value.trim();
+        if (v === '') { showCountError(''); return; }
+        var r = validateCount(v, state.chapter ? state.chapter.bank.length : 1);
+        showCountError(r.ok ? '' : r.message);
+      });
+
+      $('setupForm').addEventListener('submit', function (e) {
+        e.preventDefault();
+        var max = state.chapter.bank.length;
+        var r = validateCount($('countInput').value, max);
+        if (!r.ok) { showCountError(r.message); $('countInput').focus(); return; }
+        startQuiz(r.value);
+      });
+
+      /* ----- quiz ----- */
+      function startQuiz(n) {
+        var ch = state.chapter;
+        var picked = selectQuestions(ch.bank, n, Math.random);
+        if (picked.length !== n) {                       // should never happen; protects the score
+          showCountError('Could not prepare ' + n + ' questions. Please try again.');
+          show('viewIntro', 'chTitle');
+          return;
+        }
+        state.lastCount = n;
+        state.quiz = {
+          total: n,
+          questions: picked,
+          records: picked.map(function () { return { checked: false, selected: null, isCorrect: false }; }),
+          index: 0,
+          selected: null
+        };
+        $('qctx').textContent = state.subject + ', Chapter ' + ch.id + ': ' + ch.title;
+        show('viewQuiz');
+        renderQuestion();
+        updateProgress();
+        $('qText').focus({ preventScroll: true });
+      }
+
+      function renderQuestion() {
+        var qz = state.quiz, q = qz.questions[qz.index];
+        qz.selected = null;
+        $('qLabel').textContent = 'Question ' + (qz.index + 1) + ' of ' + qz.total;
+        var d = $('qDiff'); d.textContent = LEVEL_NAMES[q.difficulty]; d.className = 'chip diff ' + q.difficulty;
+        $('qText').textContent = q.question;
+
+        var box = $('options'); box.innerHTML = '';
+        LETTERS.forEach(function (L, i) {
+          var wrap = el('div', 'opt');
+          var input = el('input'); input.type = 'radio'; input.name = 'answer'; input.id = 'opt' + L; input.value = L;
+          var label = el('label'); label.htmlFor = input.id; label.id = 'lab' + L;
+          label.appendChild(el('span', 'letter', L));
+          var txt = el('span', 'otext');
+          txt.appendChild(document.createTextNode(q.options[i]));
+          txt.appendChild(el('span', 'otag'));
+          label.appendChild(txt);
+          input.addEventListener('change', function () {
+            if (qz.records[qz.index].checked) return;
+            qz.selected = L;
+            $('feedback').innerHTML = '';
+          });
+          wrap.appendChild(input); wrap.appendChild(label); box.appendChild(wrap);
+        });
+
+        $('feedback').innerHTML = '';
+        $('checkBtn').disabled = false;
+        var next = $('nextBtn'); next.disabled = true; next.classList.remove('btn-primary');
+        $('checkBtn').classList.add('btn-primary');
+        next.textContent = (qz.index === qz.total - 1) ? 'View Results' : 'Next Question';
+      }
+
+      function feedbackBox(kind, title, explanation) {
+        var f = $('feedback'); f.innerHTML = '';
+        var box = el('div', 'fb ' + kind);
+        box.appendChild(el('p', 'fb-title', title));
+        if (explanation) {
+          var p = el('p', 'fb-exp');
+          p.appendChild(el('strong', '', 'Explanation: '));
+          p.appendChild(document.createTextNode(explanation));
+          box.appendChild(p);
+        }
+        f.appendChild(box);
+      }
+
+      function checkAnswer() {
+        var qz = state.quiz, i = qz.index, q = qz.questions[i], rec = qz.records[i];
+        if (rec.checked) return;                          // never score the same question twice
+        if (!qz.selected) {
+          feedbackBox('warn', 'Please select an answer before clicking Check Answer.');
+          return;
+        }
+        rec.checked = true;
+        rec.selected = qz.selected;
+        rec.isCorrect = (qz.selected === q.answer);
+
+        LETTERS.forEach(function (L) {
+          $('opt' + L).disabled = true;
+          var lab = $('lab' + L), tag = lab.querySelector('.otag');
+          if (L === q.answer) { lab.classList.add('correct'); tag.textContent = (L === rec.selected) ? '✓ Correct (your answer)' : '✓ Correct answer'; }
+          else if (L === rec.selected) { lab.classList.add('wrong'); tag.textContent = '✗ Incorrect (your answer)'; }
+        });
+
+        if (rec.isCorrect) feedbackBox('good', 'Correct! Well done. Sahi jawab!', q.explanation);
+        else feedbackBox('bad', 'Incorrect. The correct answer is ' + q.answer + '.', q.explanation);
+
+        $('checkBtn').disabled = true; $('checkBtn').classList.remove('btn-primary');
+        $('nextBtn').disabled = false; $('nextBtn').classList.add('btn-primary');
+        updateProgress();
+        $('nextBtn').focus({ preventScroll: true });
+      }
+
+      function nextQuestion() {
+        var qz = state.quiz;
+        if (!qz.records[qz.index].checked) return;        // cannot skip an unchecked answer
+        if (qz.index === qz.total - 1) { showResults(); return; }
+        qz.index++;
+        renderQuestion();
+        updateProgress();
+        $('viewQuiz').scrollIntoView({ block: 'start', behavior: 'auto' });
+        $('qText').focus({ preventScroll: true });
+      }
+
+      // One function drives BOTH indicators, so the bar, the ring and the numbers always agree.
+      function updateProgress() {
+        var qz = state.quiz;
+        var done = qz.records.filter(function (r) { return r.checked; }).length;
+        var pct = qz.total ? done / qz.total * 100 : 0;
+        var shown = Math.round(pct);
+        $('barFill').style.width = pct + '%';
+        $('bar').setAttribute('aria-valuenow', shown);
+        $('ppSub').textContent = done + ' of ' + qz.total + ' questions checked';
+        setRing($('ringFill'), pct);
+        $('ringMain').textContent = done + ' / ' + qz.total;
+        $('ringPct').textContent = shown + '%';
+      }
+
+      function quitQuiz() {
+        if (window.confirm('End this quiz? Your answers so far will be discarded.')) {
+          state.quiz = null;
+          openIntro(state.chapter);
+        }
+      }
+
+      /* ----- results ----- */
+      function showResults() {
+        var qz = state.quiz, ch = state.chapter;
+        var s = scoreQuiz(qz.records, qz.total);
+
+        $('resTitle').textContent = ch.title + ': Quiz Results';
+        setRing($('resRing'), s.percentage);
+        $('resRingMain').textContent = s.percentage + '%';
+        $('resRingSub').textContent = s.marks + ' / ' + s.maxMarks;
+        $('resRingWrap').setAttribute('aria-label', 'Final score ' + s.marks + ' out of ' + s.maxMarks + ', ' + s.percentage + ' percent');
+        var perf = performance(s.percentage);
+        $('perfTitle').textContent = perf[0];
+        $('perfText').textContent = perf[1];
+
+        var stats = $('stats'); stats.innerHTML = '';
+        [['Total Questions', s.total, ''], ['Correct Answers', s.correct, 'good'], ['Incorrect Answers', s.incorrect, 'bad'],
+         ['Marks Obtained', s.marks + ' / ' + s.maxMarks, ''], ['Maximum Marks', s.maxMarks, ''], ['Percentage', s.percentage + '%', '']
+        ].forEach(function (row) {
+          var d = el('div', 'stat glass ' + row[2]);
+          d.appendChild(el('dt', '', row[0])); d.appendChild(el('dd', '', String(row[1])));
+          stats.appendChild(d);
+        });
+
+        var bd = difficultyBreakdown(qz.questions, qz.records);
+        var dl = $('diffList'); dl.innerHTML = '';
+        LEVELS.forEach(function (l) {
+          if (!bd[l].total) return;
+          var li = el('li'); li.appendChild(el('span', '', LEVEL_NAMES[l]));
+          li.appendChild(el('b', '', bd[l].correct + ' / ' + bd[l].total));
+          dl.appendChild(li);
+        });
+
+        var missed = missedTopics(qz.questions, qz.records);
+        var tl = $('topicList'); tl.innerHTML = '';
+        if (!missed.length) { tl.appendChild(el('li', '', 'No mistakes. Nothing to revise.')); }
+        missed.forEach(function (m) {
+          var li = el('li'); li.appendChild(el('span', '', m.topic));
+          li.appendChild(el('b', '', m.count + ' missed'));
+          tl.appendChild(li);
+        });
+
+        renderReview('all');
+        show('viewResults', 'resTitle');
+      }
+
+      function renderReview(filter) {
+        var qz = state.quiz;
+        $('fltAll').setAttribute('aria-pressed', filter === 'all' ? 'true' : 'false');
+        $('fltWrong').setAttribute('aria-pressed', filter === 'wrong' ? 'true' : 'false');
+        var list = $('reviewList'); list.innerHTML = '';
+        var shown = 0;
+        qz.questions.forEach(function (q, i) {
+          var r = qz.records[i];
+          if (filter === 'wrong' && r.isCorrect) return;
+          shown++;
+          var li = el('li', 'rv glass');
+          var top = el('div', 'rv-top');
+          top.appendChild(el('span', 'rv-num', 'Question ' + (i + 1)));
+          top.appendChild(el('span', 'chip diff ' + q.difficulty, LEVEL_NAMES[q.difficulty]));
+          top.appendChild(el('span', 'verdict ' + (r.isCorrect ? 'ok' : 'no'), r.isCorrect ? 'Correct' : 'Incorrect'));
+          li.appendChild(top);
+          li.appendChild(el('p', 'rv-q', q.question));
+          var ul = el('ul', 'rv-opts');
+          LETTERS.forEach(function (L, k) {
+            var o = el('li');
+            o.appendChild(document.createTextNode(L + '. ' + q.options[k]));
+            var tag = null;
+            if (L === q.answer) { o.className = 'is-correct'; tag = (L === r.selected) ? '✓ Correct (your answer)' : '✓ Correct answer'; }
+            else if (L === r.selected) { o.className = 'is-wrong'; tag = '✗ Incorrect (your answer)'; }
+            if (tag) o.appendChild(el('span', 'tag', tag));
+            ul.appendChild(o);
+          });
+          li.appendChild(ul);
+          if (q.explanation) {
+            var p = el('p', 'rv-exp'); p.appendChild(el('strong', '', 'Explanation: ')); p.appendChild(document.createTextNode(q.explanation));
+            li.appendChild(p);
+          }
+          list.appendChild(li);
+        });
+        if (!shown) { var e = el('li', 'rv glass', 'You answered every question correctly. Nothing to show here.'); list.appendChild(e); }
+      }
+
+      /* ----- wiring ----- */
+      $('checkBtn').addEventListener('click', checkAnswer);
+      $('nextBtn').addEventListener('click', nextQuestion);
+      $('quitBtn').addEventListener('click', quitQuiz);
+      $('retryBtn').addEventListener('click', function () { startQuiz(state.quiz.total); });   // fresh marks, answers and progress
+      $('settingsBtn').addEventListener('click', function () { state.quiz = null; openIntro(state.chapter); });
+      $('fltAll').addEventListener('click', function () { renderReview('all'); });
+      $('fltWrong').addEventListener('click', function () { renderReview('wrong'); });
+      $('retryLoad').addEventListener('click', load);
+
+      load();
+    })();
+  </script>
+</body>
+</html>

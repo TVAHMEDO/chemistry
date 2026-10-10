@@ -1,0 +1,620 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>MCQ Master | Chapter-wise MCQ Practice for Class 10</title>
+  <meta name="description" content="Practice chapter-wise MCQs, test your understanding, discover your mistakes, and track your progress. Class 10 Chemistry, Sindh Textbook Board.">
+  <meta name="theme-color" content="#060a18">
+  <style>
+    /* =====================================================
+       DESIGN TOKENS  (change colours here to re-theme)
+       ===================================================== */
+    :root{
+      --bg:#060a18;
+      --text:#eaf0ff;
+      --muted:#aab7dc;
+      --line:rgba(255,255,255,.15);
+      --cyan:#55d6ff;
+      --blue:#6a8dff;
+      --violet:#a58bff;
+      --good:#4be3a3;  --good-text:#8cf3c6;  --good-bg:rgba(75,227,163,.14);
+      --bad:#ff7a8e;   --bad-text:#ffa3b1;   --bad-bg:rgba(255,122,142,.14);
+      --warn-text:#ffd98a; --warn-bg:rgba(255,217,138,.12);
+      --radius:22px;
+      --font:"Segoe UI",system-ui,-apple-system,"Helvetica Neue",Roboto,Arial,sans-serif;
+    }
+
+    *,*::before,*::after{box-sizing:border-box}
+    html{scroll-behavior:smooth;-webkit-text-size-adjust:100%}
+    body{
+      margin:0;min-height:100vh;font-family:var(--font);font-size:1rem;line-height:1.6;
+      color:var(--text);background:var(--bg);overflow-x:hidden;
+    }
+    /* Ambient lighting: fixed gradients only (cheap to draw, no blurred layers) */
+    body::before{
+      content:"";position:fixed;inset:0;z-index:-1;pointer-events:none;
+      background:
+        radial-gradient(60vmax 60vmax at 10% -10%,rgba(85,214,255,.20),transparent 60%),
+        radial-gradient(55vmax 55vmax at 98% 8%,rgba(165,139,255,.22),transparent 60%),
+        radial-gradient(70vmax 70vmax at 50% 118%,rgba(106,141,255,.20),transparent 60%),
+        linear-gradient(180deg,#080d22,#050813);
+    }
+    [hidden]{display:none !important}
+    img,svg{max-width:100%}
+    h1,h2,h3,p{margin-top:0}
+    a{color:var(--cyan)}
+    ::selection{background:rgba(85,214,255,.35)}
+
+    :focus-visible{outline:3px solid #a8ecff;outline-offset:3px;border-radius:8px}
+
+    .wrap{width:min(1200px,100% - 2.5rem);margin-inline:auto}
+    .skip{position:absolute;left:-999px;top:.5rem;z-index:300;padding:.6rem 1rem;border-radius:10px;background:#fff;color:#04112a;font-weight:700}
+    .skip:focus{left:.5rem}
+    .sr-only{position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0 0 0 0);white-space:nowrap}
+
+    /* =====================================================
+       GLASS / CRYSTAL SURFACE
+       ===================================================== */
+    .glass{
+      position:relative;
+      background:
+        linear-gradient(120deg,rgba(255,255,255,.10),transparent 30%,transparent 70%,rgba(110,200,255,.07)),
+        linear-gradient(145deg,rgba(255,255,255,.10),rgba(255,255,255,.03));
+      border:1px solid var(--line);
+      border-radius:var(--radius);
+      box-shadow:0 18px 50px rgba(0,0,0,.38),inset 0 1px 0 rgba(255,255,255,.22),inset 0 -1px 0 rgba(255,255,255,.04);
+      -webkit-backdrop-filter:blur(18px) saturate(150%);
+      backdrop-filter:blur(18px) saturate(150%);
+    }
+    /* Fallback for browsers without backdrop-filter: a solid, still readable panel */
+    @supports not ((backdrop-filter:blur(1px)) or (-webkit-backdrop-filter:blur(1px))){
+      .glass{background:linear-gradient(145deg,#1a2550,#0e1636)}
+      .nav,.transition{background:#0a1030 !important}
+    }
+
+    /* =====================================================
+       BUTTONS
+       ===================================================== */
+    .btn{
+      display:inline-flex;align-items:center;justify-content:center;gap:.5rem;
+      min-height:46px;padding:.65rem 1.3rem;border-radius:999px;
+      border:1px solid var(--line);background:rgba(255,255,255,.08);color:var(--text);
+      font:600 1rem/1.2 var(--font);text-decoration:none;cursor:pointer;
+      transition:transform .2s ease,box-shadow .2s ease,background .2s ease,border-color .2s ease;
+    }
+    .btn:hover{transform:translateY(-2px);background:rgba(255,255,255,.13);border-color:rgba(255,255,255,.34);box-shadow:0 8px 24px rgba(85,214,255,.20)}
+    .btn:active{transform:translateY(0) scale(.98)}
+    .btn-primary{
+      color:#04112a;border-color:transparent;
+      background:linear-gradient(135deg,#43ccf6,#6a8dff 55%,#9a82ff);
+      box-shadow:0 8px 26px rgba(90,140,255,.35);
+    }
+    .btn-primary:hover{background:linear-gradient(135deg,#5ad6fb,#7c9bff 55%,#a993ff);box-shadow:0 10px 32px rgba(106,141,255,.5)}
+    .btn-lg{min-height:52px;padding:.8rem 1.8rem;font-size:1.05rem}
+    .btn:disabled,.btn[aria-disabled="true"]{opacity:.5;cursor:not-allowed;transform:none;box-shadow:none}
+
+    .chip{
+      display:inline-flex;align-items:center;padding:.2rem .75rem;border-radius:999px;
+      border:1px solid var(--line);background:rgba(255,255,255,.07);
+      font-size:.85rem;font-weight:600;color:var(--text);
+    }
+
+    /* =====================================================
+       NAVIGATION
+       ===================================================== */
+    .nav{
+      position:sticky;top:0;z-index:100;
+      background:rgba(8,12,30,.58);border-bottom:1px solid var(--line);
+      -webkit-backdrop-filter:blur(16px) saturate(140%);backdrop-filter:blur(16px) saturate(140%);
+    }
+    .nav-inner{display:flex;align-items:center;justify-content:space-between;gap:1rem;padding:.65rem 0}
+    .brand{display:inline-flex;align-items:center;gap:.65rem;color:var(--text);text-decoration:none;font-weight:800;font-size:1.2rem;letter-spacing:-.01em}
+    .brand svg{width:34px;height:34px;flex:none}
+    .nav-links{display:flex;align-items:center;gap:.4rem;list-style:none;margin:0;padding:0}
+    .nav-links a:not(.btn){display:inline-block;padding:.5rem .9rem;border-radius:999px;color:var(--muted);text-decoration:none;font-weight:600;transition:color .2s,background .2s}
+    .nav-links a:not(.btn):hover{color:var(--text);background:rgba(255,255,255,.08)}
+    .nav-links .btn{min-height:42px;padding:.5rem 1.15rem;margin-left:.4rem}
+    .menu-btn{display:none;width:46px;height:46px;border-radius:14px;border:1px solid var(--line);background:rgba(255,255,255,.08);color:var(--text);cursor:pointer;align-items:center;justify-content:center}
+    @media (max-width:820px){
+      .menu-btn{display:inline-flex}
+      .nav-links{
+        position:absolute;left:0;right:0;top:100%;flex-direction:column;align-items:stretch;gap:.25rem;
+        padding:.75rem 1.25rem 1.1rem;background:rgba(8,12,30,.94);border-bottom:1px solid var(--line);
+        display:none;
+      }
+      .nav-links.open{display:flex}
+      .nav-links a:not(.btn){padding:.8rem 1rem}
+      .nav-links .btn{margin:.4rem 0 0}
+    }
+
+    /* =====================================================
+       TYPOGRAPHY / SECTIONS
+       ===================================================== */
+    h1{font-size:clamp(2.2rem,6.2vw,4rem);line-height:1.08;letter-spacing:-.03em;font-weight:800}
+    h2{font-size:clamp(1.55rem,3.6vw,2.3rem);line-height:1.2;letter-spacing:-.02em;font-weight:800}
+    h3{font-size:1.2rem;line-height:1.3;font-weight:700}
+    .lead{color:var(--muted);font-size:clamp(1.05rem,2.3vw,1.2rem)}
+    .section{padding:clamp(2.5rem,6vw,4.5rem) 0;scroll-margin-top:72px}
+    .section-head{max-width:46rem;margin-bottom:2rem}
+    .section-head p{color:var(--muted);margin-bottom:0}
+
+    /* =====================================================
+       CHAPTER CARDS (used on both pages)
+       ===================================================== */
+    .chapter-grid{display:grid;gap:1.1rem;grid-template-columns:repeat(auto-fill,minmax(min(100%,250px),1fr))}
+    .chapter{
+      display:flex;flex-direction:column;gap:.55rem;min-height:190px;padding:1.3rem 1.3rem 1.2rem;
+      color:var(--text);text-decoration:none;min-width:0;
+      transition:transform .25s ease,border-color .25s ease,box-shadow .25s ease;
+    }
+    .chapter .ch-no{display:inline-flex;align-items:center;justify-content:center;align-self:flex-start;min-width:44px;height:44px;padding:0 .8rem;border-radius:14px;font-weight:800;border:1px solid var(--line);background:rgba(255,255,255,.07)}
+    .chapter h3{margin:.3rem 0 0;overflow-wrap:anywhere}
+    .chapter .ch-note{margin:0;color:var(--muted);font-size:.92rem}
+    .chapter .ch-foot{display:flex;align-items:center;justify-content:space-between;gap:.75rem;margin-top:auto;padding-top:.6rem}
+    .status{display:inline-flex;align-items:center;gap:.4rem;padding:.2rem .7rem;border-radius:999px;font-size:.85rem;font-weight:700;border:1px solid var(--line)}
+    .status.live{color:var(--good-text);background:var(--good-bg);border-color:rgba(75,227,163,.4)}
+    .status.soon{color:var(--warn-text);background:var(--warn-bg);border-color:rgba(255,217,138,.35)}
+    .go{display:inline-flex;align-items:center;justify-content:center;width:42px;height:42px;border-radius:50%;border:1px solid var(--line);background:rgba(255,255,255,.08);transition:transform .25s,background .25s}
+    .go svg{width:18px;height:18px}
+    a.chapter:hover{transform:translateY(-5px);border-color:rgba(85,214,255,.6);box-shadow:0 22px 50px rgba(0,0,0,.45),0 0 0 1px rgba(85,214,255,.25),0 0 34px rgba(85,214,255,.18)}
+    a.chapter:hover .go{transform:translateX(3px);background:linear-gradient(135deg,#43ccf6,#7c9bff);color:#04112a;border-color:transparent}
+    .chapter.is-locked{opacity:.82;cursor:not-allowed}
+    .chapter.is-locked .ch-no{color:var(--muted)}
+
+    /* =====================================================
+       PAGE-TRANSITION OVERLAY (thin line + circular progress)
+       ===================================================== */
+    .transition{
+      position:fixed;inset:0;z-index:500;display:grid;place-items:center;
+      background:rgba(5,8,19,.74);-webkit-backdrop-filter:blur(8px);backdrop-filter:blur(8px);
+      opacity:0;visibility:hidden;transition:opacity .2s ease,visibility .2s;
+    }
+    .transition.active{opacity:1;visibility:visible}
+    .tr-box{width:min(320px,86vw);padding:1.6rem 1.5rem;text-align:center}
+    .tr-ring{width:78px;height:78px;margin:0 auto .9rem;display:block;transform:rotate(-90deg)}
+    .tr-ring circle{fill:none;stroke-width:5;stroke-linecap:round}
+    .tr-ring .track{stroke:rgba(255,255,255,.14)}
+    .tr-ring .fill{stroke:url(#trGrad);stroke-dasharray:163.4;stroke-dashoffset:163.4;transition:stroke-dashoffset .8s ease-out}
+    .tr-text{margin:0;font-weight:700}
+    .tr-line{height:3px;margin-top:1rem;border-radius:3px;background:rgba(255,255,255,.14);overflow:hidden}
+    .tr-line span{display:block;height:100%;width:0;background:linear-gradient(90deg,var(--cyan),var(--violet));transition:width .8s ease-out}
+    .transition.run .tr-ring .fill{stroke-dashoffset:0}
+    .transition.run .tr-line span{width:100%}
+
+    /* =====================================================
+       FOOTER
+       ===================================================== */
+    .footer{margin-top:3rem;padding:2.5rem 0 2rem;border-top:1px solid var(--line);background:rgba(8,12,30,.45)}
+    .footer-grid{display:grid;gap:2rem;grid-template-columns:1.4fr 1fr}
+    @media (max-width:700px){.footer-grid{grid-template-columns:1fr}}
+    .footer p{color:var(--muted);margin-bottom:.5rem}
+    .footer h2{font-size:1rem;letter-spacing:0;margin-bottom:.6rem}
+    .footer ul{list-style:none;margin:0;padding:0;display:grid;gap:.35rem}
+    .footer li a{color:var(--muted);text-decoration:none}
+    .footer li a:hover{color:var(--text);text-decoration:underline}
+    .footer-bottom{margin-top:1.8rem;padding-top:1.2rem;border-top:1px solid var(--line);display:flex;flex-wrap:wrap;gap:.5rem 1.5rem;justify-content:space-between;color:var(--muted);font-size:.92rem}
+    .footer-bottom p{margin:0}
+
+    /* =====================================================
+       MOTION PREFERENCES
+       ===================================================== */
+    @media (prefers-reduced-motion:reduce){
+      html{scroll-behavior:auto}
+      *,*::before,*::after{animation-duration:.01ms !important;animation-iteration-count:1 !important;transition-duration:.01ms !important}
+    }
+
+    /* =====================================================
+       HOMEPAGE-SPECIFIC STYLES
+       ===================================================== */
+
+    /* ---- Hero ---- */
+    .hero{padding:clamp(2.2rem,7vw,5.5rem) 0 2rem}
+    .hero-grid{display:grid;gap:2.5rem;grid-template-columns:1.15fr .85fr;align-items:center}
+    @media (max-width:900px){.hero-grid{grid-template-columns:1fr;gap:2rem}}
+    .hero h1{margin-bottom:1.1rem}
+    .hero .lead{max-width:34rem;margin-bottom:0}
+    .hero-actions{display:flex;flex-wrap:wrap;gap:.8rem;margin-top:1.9rem}
+    .hero-actions .btn{flex:0 1 auto}
+    @media (max-width:420px){.hero-actions .btn{flex:1 1 100%}}
+
+    /* Decorative equilibrium "crystal": a glass disc with a glowing progress ring */
+    .stage{position:relative;width:min(380px,86%);aspect-ratio:1;margin-inline:auto}
+    .disc{position:absolute;inset:8%;border-radius:50%;display:grid;place-items:center;text-align:center;padding:1rem}
+    .ring-svg{position:absolute;inset:0;width:100%;height:100%;transform:rotate(-90deg);overflow:visible}
+    .ring-svg circle{fill:none;stroke-linecap:round}
+    .ring-svg .track{stroke:rgba(255,255,255,.12);stroke-width:7}
+    .ring-svg .fill{stroke:url(#heroGrad);stroke-width:9;stroke-dasharray:552.9;stroke-dashoffset:154.8;filter:drop-shadow(0 0 8px rgba(85,214,255,.55));animation:ringIn 1.8s cubic-bezier(.2,.8,.2,1) .25s both}
+    @keyframes ringIn{from{stroke-dashoffset:552.9}}
+    .eq-arrows{width:84px;height:42px;color:var(--cyan);margin:0 auto .3rem;display:block}
+    .eq-line{font-size:clamp(1.5rem,5vw,2.1rem);font-weight:800;letter-spacing:-.02em;line-height:1.15;margin:0}
+    .eq-cap{margin:.25rem 0 0;color:var(--muted);font-size:.95rem}
+    .shard{position:absolute;pointer-events:none;background:linear-gradient(135deg,rgba(255,255,255,.38),rgba(120,200,255,.06));clip-path:polygon(50% 0,100% 38%,82% 100%,18% 100%,0 38%);animation:floaty 9s ease-in-out infinite alternate}
+    .shard.s1{width:54px;height:62px;left:-2%;top:12%}
+    .shard.s2{width:38px;height:44px;right:2%;bottom:10%;animation-delay:-4s;background:linear-gradient(135deg,rgba(210,190,255,.4),rgba(165,139,255,.06))}
+    @keyframes floaty{from{transform:translateY(-8px) rotate(-6deg)}to{transform:translateY(10px) rotate(8deg)}}
+
+    /* ---- Quick info cards ---- */
+    .info-grid{display:grid;gap:1.1rem;grid-template-columns:repeat(auto-fit,minmax(min(100%,260px),1fr))}
+    .info{padding:1.5rem}
+    .info .icon{width:48px;height:48px;border-radius:14px;display:grid;place-items:center;margin-bottom:1rem;color:var(--cyan);border:1px solid var(--line);background:rgba(85,214,255,.1)}
+    .info .icon svg{width:26px;height:26px}
+    .info h3{margin-bottom:.4rem}
+    .info p{margin:0;color:var(--muted)}
+
+    /* ---- Subject card ---- */
+    .subject{display:grid;grid-template-columns:auto 1fr;gap:1.5rem 2rem;padding:clamp(1.4rem,3vw,2.2rem);align-items:center;cursor:pointer;transition:transform .25s ease,box-shadow .25s ease,border-color .25s ease}
+    .subject:hover{transform:translateY(-4px);border-color:rgba(85,214,255,.55);box-shadow:0 24px 60px rgba(0,0,0,.45),0 0 40px rgba(85,214,255,.16)}
+    @media (max-width:700px){.subject{grid-template-columns:1fr}}
+    .flask{width:110px;height:110px;border-radius:28px;display:grid;place-items:center;border:1px solid var(--line);background:linear-gradient(145deg,rgba(85,214,255,.18),rgba(165,139,255,.12));box-shadow:inset 0 1px 0 rgba(255,255,255,.25)}
+    .flask svg{width:64px;height:64px}
+    .subject h3{font-size:1.7rem;margin-bottom:.6rem}
+    .facts{display:grid;grid-template-columns:repeat(auto-fit,minmax(150px,1fr));gap:.7rem 1.5rem;margin:0 0 1.3rem}
+    .facts div{min-width:0}
+    .facts dt{font-size:.85rem;color:var(--muted)}
+    .facts dd{margin:0;font-weight:700;overflow-wrap:anywhere}
+    .more-note{margin:1rem 0 0;color:var(--muted);font-size:.95rem}
+
+    /* ---- Chapters ---- */
+    .data-note{margin:0 0 1.2rem;padding:.9rem 1.1rem;border-radius:14px;border:1px solid rgba(255,217,138,.4);background:var(--warn-bg);color:var(--warn-text)}
+    .loading-line{color:var(--muted)}
+
+    /* ---- How to practise ---- */
+    .steps{list-style:none;margin:0;padding:0;display:grid;gap:1rem;counter-reset:step;grid-template-columns:repeat(auto-fit,minmax(min(100%,210px),1fr))}
+    .steps li{counter-increment:step;padding:1.3rem;min-width:0}
+    .steps li::before{content:counter(step);display:grid;place-items:center;width:36px;height:36px;margin-bottom:.8rem;border-radius:50%;font-weight:800;color:#04112a;background:linear-gradient(135deg,#43ccf6,#9a82ff)}
+    .steps h3{font-size:1.05rem;margin-bottom:.3rem}
+    .steps p{margin:0;color:var(--muted);font-size:.95rem}
+    .rules{margin-top:1.4rem;padding:1.2rem 1.4rem}
+    .rules p{margin:0;color:var(--muted)}
+    .rules strong{color:var(--text)}
+
+    /* ---- About ---- */
+    .about{padding:clamp(1.4rem,3vw,2.2rem);max-width:56rem}
+    .about p{color:var(--muted);margin-bottom:.8rem}
+    .about p:last-child{margin-bottom:0}
+  </style>
+</head>
+<body>
+  <a class="skip" href="#main">Skip to content</a>
+
+  <!-- ===== NAVIGATION ===== -->
+  <header class="nav">
+    <div class="wrap nav-inner">
+      <a class="brand" href="index.html" aria-label="MCQ Master home">
+        <svg viewBox="0 0 40 40" aria-hidden="true">
+          <defs><linearGradient id="logoGrad" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#55d6ff"/><stop offset="1" stop-color="#a58bff"/></linearGradient></defs>
+          <path d="M20 2 36 11v18L20 38 4 29V11z" fill="rgba(255,255,255,.08)" stroke="url(#logoGrad)" stroke-width="2.2" stroke-linejoin="round"/>
+          <path d="M20 2v36M4 11l32 18M36 11 4 29" stroke="url(#logoGrad)" stroke-width="1" opacity=".35"/>
+          <path d="M11 22h18M11 18h18" stroke="#eaf0ff" stroke-width="2.2" stroke-linecap="round" opacity=".9"/>
+        </svg>
+        <span>MCQ Master</span>
+      </a>
+      <button class="menu-btn" id="menuBtn" type="button" aria-expanded="false" aria-controls="navLinks" aria-label="Toggle menu">
+        <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" aria-hidden="true"><path d="M4 7h16M4 12h16M4 17h16"/></svg>
+      </button>
+      <ul class="nav-links" id="navLinks">
+        <li><a href="index.html">Home</a></li>
+        <li><a href="index.html#subjects">Subjects</a></li>
+        <li><a href="index.html#about">About</a></li>
+        <li><a class="btn btn-primary" href="chemistry.html?chapter=1" data-transition="Opening Chapter 1…">Start Practicing</a></li>
+      </ul>
+    </div>
+  </header>
+  <!-- ===== PAGE TRANSITION OVERLAY (shown briefly when moving between pages) ===== -->
+  <div class="transition" id="transition" aria-hidden="true">
+    <div class="tr-box glass">
+      <svg class="tr-ring" viewBox="0 0 64 64">
+        <defs><linearGradient id="trGrad" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#55d6ff"/><stop offset="1" stop-color="#a58bff"/></linearGradient></defs>
+        <circle class="track" cx="32" cy="32" r="26"/>
+        <circle class="fill" cx="32" cy="32" r="26"/>
+      </svg>
+      <p class="tr-text" id="trText">Loading…</p>
+      <div class="tr-line"><span></span></div>
+    </div>
+  </div>
+
+  <main id="main">
+
+    <!-- ===== HERO ===== -->
+    <section class="hero" aria-labelledby="heroTitle">
+      <div class="wrap hero-grid">
+        <div>
+          <h1 id="heroTitle">Prepare Smarter. Perform Better.</h1>
+          <p class="lead">Practice chapter-wise MCQs, test your understanding, discover your mistakes, and track your progress.</p>
+          <div class="hero-actions">
+            <a class="btn" href="#chapters">Explore Chapters</a>
+            <a class="btn btn-primary" href="chemistry.html?chapter=1" data-transition="Opening Chemistry practice…">Start Practicing</a>
+          </div>
+        </div>
+
+        <div class="stage" aria-hidden="true">
+          <span class="shard s1"></span>
+          <span class="shard s2"></span>
+          <div class="disc glass" style="border-radius:50%">
+            <div>
+              <svg class="eq-arrows" viewBox="0 0 48 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M4 8h38M33 2l9 6"/><path d="M44 16H6M15 22l-9-6"/></svg>
+              <p class="eq-line">Qc = Kc</p>
+              <p class="eq-cap">The system is at equilibrium</p>
+            </div>
+          </div>
+          <svg class="ring-svg" viewBox="0 0 200 200">
+            <defs><linearGradient id="heroGrad" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#55d6ff"/><stop offset="1" stop-color="#a58bff"/></linearGradient></defs>
+            <circle class="track" cx="100" cy="100" r="88"/>
+            <circle class="fill" cx="100" cy="100" r="88"/>
+          </svg>
+        </div>
+      </div>
+    </section>
+
+    <!-- ===== QUICK INFORMATION CARDS ===== -->
+    <section class="section" style="padding-top:1.5rem" aria-label="Features">
+      <div class="wrap info-grid">
+        <article class="info glass">
+          <div class="icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 5.5A2.5 2.5 0 0 1 6.5 3H20v16H6.5A2.5 2.5 0 0 0 4 21.5z"/><path d="M4 5.5v16M9 8h6M9 12h6"/></svg></div>
+          <h3>Chapter-Wise Practice</h3>
+          <p>Practice questions from individual textbook chapters.</p>
+        </article>
+        <article class="info glass">
+          <div class="icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="9"/><path d="m8 12.5 3 3 5-6"/></svg></div>
+          <h3>Instant Feedback</h3>
+          <p>Discover whether each answer is correct immediately after checking it.</p>
+        </article>
+        <article class="info glass">
+          <div class="icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 20V10M10 20V4M16 20v-7M22 20H2"/></svg></div>
+          <h3>Detailed Results</h3>
+          <p>View marks, percentage, correct answers, incorrect answers, and explanations after completing a quiz.</p>
+        </article>
+      </div>
+    </section>
+
+    <!-- ===== SUBJECTS ===== -->
+    <section class="section" id="subjects" aria-labelledby="subjectsTitle">
+      <div class="wrap">
+        <div class="section-head">
+          <h2 id="subjectsTitle">Choose Your Subject</h2>
+          <p>Start with Chemistry. More subjects can be added later.</p>
+        </div>
+
+        <article class="subject glass" id="chemCard">
+          <div class="flask" aria-hidden="true">
+            <svg viewBox="0 0 64 64" fill="none" stroke="#a8ecff" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M24 6h16M26 6v18L10 52a5 5 0 0 0 4.5 7.5h35A5 5 0 0 0 54 52L38 24V6"/><path d="M17 42h30" stroke="#a58bff"/><circle cx="29" cy="49" r="2" fill="#55d6ff" stroke="none"/><circle cx="37" cy="46" r="1.6" fill="#a58bff" stroke="none"/></svg>
+          </div>
+          <div>
+            <h3>Chemistry</h3>
+            <dl class="facts">
+              <div><dt>Class</dt><dd>10th</dd></div>
+              <div><dt>Board</dt><dd>Sindh Textbook Board</dd></div>
+              <div><dt>Available chapters</dt><dd id="chemAvail">Checking…</dd></div>
+            </dl>
+            <a class="btn btn-primary" href="chemistry.html" data-transition="Opening Chemistry…">Explore Chapters</a>
+          </div>
+        </article>
+      </div>
+    </section>
+
+    <!-- ===== CHEMISTRY CHAPTER LIST ===== -->
+    <section class="section" id="chapters" aria-labelledby="chaptersTitle">
+      <div class="wrap">
+        <div class="section-head">
+          <h2 id="chaptersTitle">Chemistry Chapters</h2>
+          <p>Class 10th, Sindh Textbook Board. Chapters turn on as soon as their questions are added.</p>
+        </div>
+        <p class="data-note" id="dataNote" role="alert" hidden></p>
+        <p class="loading-line" id="chaptersLoading">Loading chapters…</p>
+        <div class="chapter-grid" id="chapterGrid"></div>
+      </div>
+    </section>
+
+    <!-- ===== INSTRUCTIONS ===== -->
+    <section class="section" id="instructions" aria-labelledby="howTitle">
+      <div class="wrap">
+        <div class="section-head">
+          <h2 id="howTitle">How to Practice</h2>
+        </div>
+        <ol class="steps">
+          <li class="glass"><h3>Pick a chapter</h3><p>Choose an available chapter from the Chemistry list.</p></li>
+          <li class="glass"><h3>Set your quiz</h3><p>Choose how many questions to attempt, from 1 up to the full question bank.</p></li>
+          <li class="glass"><h3>Answer one by one</h3><p>Select an option, then press Check Answer to see if you are right.</p></li>
+          <li class="glass"><h3>Move on</h3><p>Read the short explanation, then press Next Question.</p></li>
+          <li class="glass"><h3>Review your result</h3><p>See your score, percentage and every answer with its explanation.</p></li>
+        </ol>
+        <div class="rules glass">
+          <p><strong>Marking:</strong> every MCQ carries 1 mark. There is no negative marking. An answer counts only after you press Check Answer, and it cannot be changed afterwards.</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- ===== ABOUT ===== -->
+    <section class="section" id="about" aria-labelledby="aboutTitle">
+      <div class="wrap">
+        <div class="about glass">
+          <h2 id="aboutTitle">About MCQ Master</h2>
+          <p>MCQ Master is a simple practice space for students preparing for school tests and examinations. Questions are grouped by textbook chapter, balanced from easy to hard, and explained after every answer.</p>
+          <p><strong style="color:var(--text)">Learn Smart. Practice Better. Score Higher.</strong></p>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- ===== FOOTER ===== -->
+  <footer class="footer">
+    <div class="wrap">
+      <div class="footer-grid">
+        <div>
+          <a class="brand" href="index.html" aria-label="MCQ Master home">
+            <svg viewBox="0 0 40 40" aria-hidden="true"><path d="M20 2 36 11v18L20 38 4 29V11z" fill="rgba(255,255,255,.08)" stroke="#7fb6ff" stroke-width="2.2" stroke-linejoin="round"/><path d="M11 22h18M11 18h18" stroke="#eaf0ff" stroke-width="2.2" stroke-linecap="round"/></svg>
+            <span>MCQ Master</span>
+          </a>
+          <p style="margin-top:.8rem;max-width:30rem">Chapter-wise MCQ practice for school tests and examinations. Learn Smart. Practice Better. Score Higher.</p>
+        </div>
+        <nav aria-label="Footer">
+          <h2>Quick links</h2>
+          <ul>
+            <li><a href="index.html">Home</a></li>
+            <li><a href="index.html#subjects">Subjects</a></li>
+            <li><a href="index.html#chapters">Chemistry chapters</a></li>
+            <li><a href="index.html#about">About</a></li>
+          </ul>
+        </nav>
+      </div>
+      <div class="footer-bottom">
+        <p>&copy; <span id="year">2026</span> MCQ Master. All rights reserved.</p>
+        <p>Made with ❤️ By <strong>AhmedXD</strong>.</p>
+        <p> Made For Students</p>
+        <p>for enquiries or feedbacks mail us at</p>
+        <p> Mail: ahmedshar698@gmail.com</p>
+      </div>
+    </div>
+  </footer>
+
+  <script>
+    /* =====================================================
+       SHARED: mobile menu + page transition + footer year
+       ===================================================== */
+    (function () {
+      var btn = document.getElementById('menuBtn');
+      var links = document.getElementById('navLinks');
+      var overlay = document.getElementById('transition');
+      var label = document.getElementById('trText');
+      var reduce = window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+      var year = document.getElementById('year');
+      if (year) year.textContent = new Date().getFullYear();
+
+      function closeMenu() {
+        if (!links) return;
+        links.classList.remove('open');
+        btn.setAttribute('aria-expanded', 'false');
+      }
+      if (btn && links) {
+        btn.addEventListener('click', function () {
+          var open = links.classList.toggle('open');
+          btn.setAttribute('aria-expanded', open ? 'true' : 'false');
+        });
+        links.addEventListener('click', function (e) { if (e.target.closest('a')) closeMenu(); });
+        document.addEventListener('keydown', function (e) { if (e.key === 'Escape') closeMenu(); });
+      }
+
+      // Short (about 0.85 s) transition: thin line + circular ring fill, then navigate.
+      // With reduced motion, or if the overlay is missing, it simply navigates.
+      window.goWithTransition = function (url, text) {
+        if (reduce || !overlay) { window.location.href = url; return; }
+        if (label) label.textContent = text || 'Loading…';
+        overlay.classList.add('active');
+        void overlay.offsetWidth;            // let the browser apply the start state
+        overlay.classList.add('run');
+        setTimeout(function () { window.location.href = url; }, 850);
+      };
+
+      // Any link with data-transition="message" gets the animation (normal links still work without JS).
+      document.addEventListener('click', function (e) {
+        var a = e.target.closest ? e.target.closest('a[data-transition]') : null;
+        if (!a || e.defaultPrevented || e.button !== 0 || e.metaKey || e.ctrlKey || e.shiftKey || e.altKey) return;
+        e.preventDefault();
+        window.goWithTransition(a.href, a.getAttribute('data-transition'));
+      });
+
+      // If the user presses Back, make sure the overlay is not left on screen.
+      window.addEventListener('pageshow', function () {
+        if (overlay) overlay.classList.remove('active', 'run');
+      });
+    })();
+
+    /* =====================================================
+       HOMEPAGE: load chapters from data/chemistry.json
+       ===================================================== */
+    (function () {
+      var grid = document.getElementById('chapterGrid');
+      var loading = document.getElementById('chaptersLoading');
+      var note = document.getElementById('dataNote');
+      var availEl = document.getElementById('chemAvail');
+      var chemCard = document.getElementById('chemCard');
+      var SVG_ARROW = '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg>';
+
+      // Shown only if data/chemistry.json cannot be loaded (for example when the file is opened
+      // directly with file://). Chapter 1 still links to the quiz; the others stay unavailable.
+      function fallbackChapters() {
+        var list = [{ id: 1, title: 'Chemical Equilibrium', available: true, questions: [] }];
+        for (var i = 2; i <= 10; i++) list.push({ id: i, title: 'Title not added yet', available: false, questions: [] });
+        return list;
+      }
+
+      // A chapter is live only if it is switched on in the JSON and really has questions
+      // (in fallback mode the questions list is empty, so Chapter 1 is trusted).
+      function isLive(ch, fallback) {
+        return ch.available === true && (fallback || (Array.isArray(ch.questions) && ch.questions.length > 0));
+      }
+
+      function render(chapters, fallback) {
+        grid.innerHTML = '';
+        var live = 0, totalQ = 0;
+        chapters.forEach(function (ch) {
+          var on = isLive(ch, fallback);
+          var el = document.createElement(on ? 'a' : 'div');
+          el.className = 'chapter glass ' + (on ? 'is-live' : 'is-locked');
+          if (on) {
+            el.href = 'chemistry.html?chapter=' + encodeURIComponent(ch.id);
+            el.setAttribute('data-transition', 'Opening Chapter ' + ch.id + '…');
+            live++; totalQ += (ch.questions || []).length;
+          } else {
+            el.setAttribute('aria-disabled', 'true');
+          }
+
+          var no = document.createElement('span');
+          no.className = 'ch-no';
+          no.textContent = 'Chapter ' + ch.id;
+
+          var h = document.createElement('h3');
+          h.textContent = ch.title || 'Title not added yet';
+
+          var p = document.createElement('p');
+          p.className = 'ch-note';
+          p.textContent = on
+            ? (fallback ? 'Practice MCQs' : (ch.questions.length + ' MCQs ready'))
+            : 'Content not added yet';
+
+          var foot = document.createElement('div');
+          foot.className = 'ch-foot';
+          var st = document.createElement('span');
+          st.className = 'status ' + (on ? 'live' : 'soon');
+          st.textContent = on ? 'Available' : 'Coming Soon';
+          foot.appendChild(st);
+          if (on) {
+            var go = document.createElement('span');
+            go.className = 'go';
+            go.innerHTML = SVG_ARROW;
+            foot.appendChild(go);
+          }
+
+          el.appendChild(no); el.appendChild(h); el.appendChild(p); el.appendChild(foot);
+          grid.appendChild(el);
+        });
+
+        loading.hidden = true;
+        availEl.textContent = live + ' of ' + chapters.length + ' chapters' + (!fallback && totalQ ? ' (' + totalQ + ' MCQs)' : '');
+      }
+
+      fetch('data/chemistry.json', { cache: 'no-cache' })
+        .then(function (r) { if (!r.ok) throw new Error('HTTP ' + r.status); return r.json(); })
+        .then(function (data) {
+          if (!data || !Array.isArray(data.chapters)) throw new Error('Unexpected JSON structure');
+          render(data.chapters, false);
+        })
+        .catch(function (err) {
+          render(fallbackChapters(), true);
+          note.hidden = false;
+          note.textContent = 'Chapter details could not be loaded from data/chemistry.json (' + err.message + '). ' +
+            'If you opened this file directly, run the site through XAMPP instead: http://localhost/mcq-preparation/';
+        });
+
+      // The whole Chemistry card is clickable (the button inside is the keyboard-friendly way in).
+      chemCard.addEventListener('click', function (e) {
+        if (e.target.closest('a')) return;
+        var sel = window.getSelection && window.getSelection().toString();
+        if (sel) return;
+        window.goWithTransition('chemistry.html', 'Opening Chemistry…');
+      });
+    })();
+  </script>
+</body>
+</html>
